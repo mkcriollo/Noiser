@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
 
        if @user 
         login(@user)
-        render :show
+        render 'api/users/show'
        else
         render json: ["Username or Password was invaild"], status: 422
        end
@@ -17,9 +17,8 @@ class Api::SessionsController < ApplicationController
         @user = current_user
         if @user 
             logout
-            render :show
+            render 'api/users/show'
         else
             render json: ["No user is login"], status: 404
-        end
     end
 end
