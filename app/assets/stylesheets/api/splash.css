@@ -1,0 +1,401 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* HEADER INFO */
+
+.splash-container {
+    background-color: #f2f2f2;
+}
+
+.header-slide {
+    font-family: monospace;
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+    height: 500px;
+    width: 1200px;
+    margin-left: 350px;
+    object-fit: cover;
+    /* background-image: url(https://10mag.com/wp-content/uploads/2018/04/club-lucidream-hongdae.jpg); */
+    background-image: url(https://static.billboard.com/files/2020/11/Travis-Scott-Press-Photo-cr-Daniel-Sannwald-Billboard-1548-1605547610-compressed.jpg);
+    /* background-image: url(https://img.theculturetrip.com/768x/smart/wp-content/uploads/2018/11/31531640_1693329670712650_8907371420594825868_n-1.jpg); */
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* background-color: rgba(255,255,255,0); */
+.login-button {
+    cursor: pointer;
+    background-color: rgba(14, 13, 13, 0.755);
+    border-color: blac;
+    padding: 6px 15px;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #fff;
+    width: 90px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.signup-button {
+    cursor: pointer;
+    padding: 6px 15px;
+    background-color: #ff5502;
+    border-color: #ff5502;
+    color: #fff;
+    font-weight: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.noiser-logo {
+    color: white;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 50px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dot-container {
+    text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+
+/* trending song container */
+
+.trending-songs-container {
+    width: 1200px;
+    background-color: #fff;
+    height: 700px;
+    margin-left: 350px;
+}
+
+/* searchbar container */
+
+.searchbar-container {
+   display: flex;
+   justify-content: center;
+}
+.searchbar {
+    height: 40px;
+    width: 500px;
+    margin-top: 60px;
+    margin-right: 15px;
+    border: none;
+}
+
+.searchbar-container > p {
+    margin-top: 75px;
+    margin-right: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.splash-upload-button {
+    cursor: pointer;
+    margin-top: 60px;
+    background-color: #ff5502;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    border-color: #ff5502;
+    padding: 3px 10px 3px 10px;
+}
+
+input[type="text"].searchbar {
+    background-color:#f2f2f2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
+    color: #333333;
+}
+
+.trending-tracks-title {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 100px;
+    font-size: 24px;
+    color: #333333;
+}
+
+.explore-music-button {
+   cursor: pointer;
+   position: absolute;
+   top: 1100px;
+   left: 800px;
+   background-color: #ff5502;
+   border-color: #ff5502;
+   color: #fff;
+   padding: 13px 15px 15px 15px;
+   border-radius: 5px;
+   font-size: 18px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Mobile Banner */
+
+.banner-mobile {
+    width: 1200px;
+    background-color: #f2f2f2;
+    height: 450px;
+    margin-left: 350px;
+}
+
+.mobile-info-ad > h2 {
+    color: #333;
+    float: right;
+    font-size: 37px;
+    position: absolute;
+    top: 1320px;
+    left: 1150px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.rainbow-line {
+    width: 70px;
+    height: 3px;
+    background-image: linear-gradient(90deg,#7d01a1,#f30 50%,#f50);
+    position: absolute;
+    top: 1375px;
+    left: 1150px;
+}
+
+.mobile-info-text {
+    color: #333;
+    float: right;
+    width: 350px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 1420px;
+    left: 1150px;
+    line-height: 40px;
+    overflow-wrap: break-word;
+}
+
+.mobile-pic-ad {
+    background-image: url(https://a-v2.sndcdn.com/assets/images/never_stop_listening@1x-9c5264ff.jpg);
+    width: 750px;
+    height: 450px;
+    float: left;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;;
+}
+
+
+
+
+
+/* NOISER TEASER */
+
+.noiser-teaser {
+    width: 1200px;
+    background-color:#fff;
+    height: 400px;
+    margin-left: 350px;
+    /* background-image: url(https://www.freshhiphoprnb.com/wp-content/uploads/2018/06/carti-rip-680x336.jpg); */
+    /* background-image: url(https://www.udiscovermusic.com/wp-content/uploads/2020/04/Playboi-Carti.jpg); */
+    background-image: url(https://images.summitmedia-digital.com/candy/images/2017/05/23/2017-05-23---A_main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.teaser-header {
+   position: absolute;
+   top: 1730px;
+   left: 430px;
+   color: #ffffff;
+   font-size: 34px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-weight: 100px;
+}
+
+.teaser-text {
+   position: absolute;
+   top: 1800px;
+   left: 430px;
+   line-height: 30px;
+   color: #ffffff;
+   width: 500px;
+   font-size: 20px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.teaser-button {
+   cursor: pointer;
+   position: absolute;
+   top: 1930px;
+   left: 430px;
+   background-color: rgba(255,255,255,0);
+   border-color: #fff;
+   border-radius: 5px;
+   color: #fff;
+   width: 150px;
+   height: 50px ;
+}
+
+/* Bottom container */
+
+.bottom-container {
+    width: 1200px;
+    background-color:#fff;
+    height: 400px;
+    margin-left: 350px;
+}
+
+.bottom-header {
+   position: absolute;
+   top: 2150px;
+   left: 650px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 36px;
+
+}
+
+.bottom-text {
+   position: absolute;
+   top: 2210px;
+   left: 620px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 24px;
+}
+
+.bottom-button-signup {
+   cursor: pointer;
+   position: absolute;
+   top: 2270px;
+   left: 840px;
+   border-radius: 5px;
+   color: #fff;
+   background-color: #ff5502;
+   border-color: #ff5502;
+   width: 200px;
+   height: 50px;
+   padding: 13px 23px;
+   font-size: 17px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.signin-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.signin-bottom > p {
+    position: absolute;
+    top: 2350px;
+    left: 820px;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333333;
+
+}
+
+.signin-bottom > button {
+    cursor: pointer;
+    position: absolute;
+    top: 2335px;
+    left: 980px;
+    color: #333333;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+}
+
+/* footer */
+
+.splash-footer {
+    width: 1200px;
+    background-color:#fff;
+    height: 150px;
+    margin-left: 350px;
+}
+
+.splash-footer > hr {
+    margin-top: 0px;
+    color:#cccccc;
+    width: 1160px;
+}
+
+.splash-footer > p {
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #cccccc;
+    margin-left: 20px;
+    line-height: 30px;
+}
+
+p:last-child {
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333333
+}

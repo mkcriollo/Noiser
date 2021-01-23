@@ -1,6 +1,7 @@
 import { logout } from "../../actions/session_actions";
 import Greeting from "./greeting"
-import {connect} from "react-redux"
+import {connect} from "react-redux";
+import {openModal} from "../../actions/modal_actions"
 
 const mSTP = (state,ownProps) => {
     return {
@@ -10,7 +11,8 @@ const mSTP = (state,ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        logout: formUser => dispatch(logout(formUser))
+        logout: formUser => dispatch(logout(formUser)),
+        openModal: modal => dispatch(openModal(modal))
     }
 }
 

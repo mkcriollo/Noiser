@@ -9,7 +9,9 @@ class Api::SessionsController < ApplicationController
         login(@user)
         render 'api/users/show'
        else
-        render json: ["Username or Password was invaild"], status: 422
+        render json: {
+          Elogin: ["Username or Password was invaild"]
+        }, status: 401
        end
     end
 
@@ -19,6 +21,10 @@ class Api::SessionsController < ApplicationController
             logout
             render 'api/users/show'
         else
-            render json: ["No user is login"], status: 404
+            # render json: ["No user is login"], status: 404
+            render json: {
+              Euser: "No user is login"
+            }, status: 404
+        end
     end
 end

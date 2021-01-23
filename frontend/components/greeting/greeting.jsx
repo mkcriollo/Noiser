@@ -1,21 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
+    constructor(props){
+        super(props)
+    }
 
     render() { 
-        let { currentUser, logout } = this.props
+        let { currentUser, logout,} = this.props
         let greetingUser = () => (
-            <div>
-                <h1>`Welcome ${currentUser.username}`</h1>
+            <div className="user-profile-header">
+                <h1>{currentUser.username}</h1>
                 <button onClick={() => logout(currentUser.id)}>Log Out</button>
             </div>
         )
         let sessionLinks = () => (
             <nav>
-                <Link to="/signup">Sign Up</Link>
-                &nbsp;or&nbsp;
-                <Link to='/login'>Log In</Link>
+                <button className="login-button" onClick={() => this.props.openModal("login")}>Sign in</button>
+                <button className="signup-button" onClick={() => this.props.openModal("signup")}>Create account</button>
             </nav>
         )
         return currentUser ? greetingUser() : sessionLinks()
@@ -23,3 +24,4 @@ class Greeting extends React.Component {
 }
  
 export default Greeting;
+
