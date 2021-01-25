@@ -12,7 +12,6 @@ import DiscoverContainer from "./discover/discover_container";
 const App = () => (
     <div>
         <Modal />
-        
         <Switch>
             <AuthRoute exact path='/' component={SplashContainer}/>
             <ProtectedRoute exact path="/discover" component={DiscoverContainer} />

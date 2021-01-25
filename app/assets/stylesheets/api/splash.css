@@ -62,7 +62,7 @@ table {
     background-color: blue;
     height: 500px;
     width: 1200px;
-    margin-left: 350px;
+    margin-left: 18.65%;
     object-fit: cover;
     /* background-image: url(https://10mag.com/wp-content/uploads/2018/04/club-lucidream-hongdae.jpg); */
     background-image: url(https://static.billboard.com/files/2020/11/Travis-Scott-Press-Photo-cr-Daniel-Sannwald-Billboard-1548-1605547610-compressed.jpg);
@@ -131,7 +131,7 @@ table {
     width: 1200px;
     background-color: #fff;
     height: 700px;
-    margin-left: 350px;
+    margin-left: 18.65%;
 }
 
 /* searchbar container */
@@ -201,7 +201,7 @@ input[type="text"].searchbar {
     width: 1200px;
     background-color: #f2f2f2;
     height: 450px;
-    margin-left: 350px;
+    margin-left: 18.65%;
 }
 
 .mobile-info-ad > h2 {
@@ -256,7 +256,7 @@ input[type="text"].searchbar {
     width: 1200px;
     background-color:#fff;
     height: 400px;
-    margin-left: 350px;
+    margin-left: 18.65%;
     /* background-image: url(https://www.freshhiphoprnb.com/wp-content/uploads/2018/06/carti-rip-680x336.jpg); */
     /* background-image: url(https://www.udiscovermusic.com/wp-content/uploads/2020/04/Playboi-Carti.jpg); */
     background-image: url(https://images.summitmedia-digital.com/candy/images/2017/05/23/2017-05-23---A_main.jpg);
@@ -305,7 +305,7 @@ input[type="text"].searchbar {
     width: 1200px;
     background-color:#fff;
     height: 400px;
-    margin-left: 350px;
+    margin-left: 18.65%;
 }
 
 .bottom-header {
@@ -377,7 +377,7 @@ input[type="text"].searchbar {
     width: 1200px;
     background-color:#fff;
     height: 150px;
-    margin-left: 350px;
+    margin-left: 18.65%;
 }
 
 .splash-footer > hr {

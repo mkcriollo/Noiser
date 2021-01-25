@@ -28,14 +28,41 @@ class NavBar extends React.Component {
                     </div>
                     <button className="upgrade-header">Upgrade</button>
                     <button className="upload-header">Upload</button>
-                    <div>
-                        <GreetingContainer />
+                    <div className="dropdown">
+                        <div className="img-profile"/>
+                        <p>{this.props.currentUser.username}</p>
+                        <div className="arrow-button"></div>
+                        {/* <GreetingContainer /> */}
+                        <div className="dropdown-menu">
+                            <div className="left-drop">
+                                <li className="profile-icon"></li>
+                                <li className="likes-icon"></li>
+                                <li className="stations-icon"></li>
+                                <li className="follow-icon"></li>
+                                <li className="pro-icon"></li>
+                                <li className="tracks-icon"></li>
+                                <li className="distribute-icon"></li>
+                            </div>
+                            <div className="right-drop">
+                                <li>Profile</li>
+                                <li>Likes</li>
+                                <li>Stations</li>
+                                <li>Who to follow</li>
+                                <li>Try Pro</li>
+                                <li>Tracks</li>
+                                <li>Distribute</li>
+                            </div>
+                        </div>
                     </div>
                     <button className="activites-header-bell"></button>
                     <button className="activites-header-mail"></button>
-                    <button className="activites-header-dots"></button>
+                    <div className="activites-header-dots">
+                        <div className="logout-drop">
+                            <button onClick={() => this.props.logout(this.props.currentUser.id)}>Log Out</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div> 
          );
     }
 }

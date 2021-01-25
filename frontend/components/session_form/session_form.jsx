@@ -181,8 +181,8 @@ class SessionForm extends React.Component {
                         </label>
                         <p className="validation-error">{this.passwordError}</p>
                         <br />
-                        <p className="privacy-text">{ loginOnly ? "" : "By signing up I accept the Terms of Use. I have read and understood the Privacy Policy and Cookies Policy"}</p>
-                        <input className="login-submit" type="submit" value={loginOnly ? this.props.formType : "Accept & continue"}/>
+                        <p className="privacy-text">{ loginOnly ? "" : ""}</p>
+                        <input className="login-submit" type="submit" value={loginOnly ? "Sign in" : "Accept & continue"}/>
                         <p className="login-issue-text">{loginOnly ? "" : "Are you trying to sign in ?"}</p>
                         <p className="login-issue-text">{loginOnly ? "" : "The email address that you entered was not found."}</p>
                         <p className="login-issue-text">{loginOnly ? "" : "Double-check your email address."}</p>
