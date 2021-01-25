@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
          this.handleModalUpdate2 = this.handleModalUpdate2.bind(this)
          this.handleModalUpdate3 = this.handleModalUpdate3.bind(this)
          this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
+         this.previousModal = this.previousModal.bind(this)
         //  this.renderErrors = this.renderErrors.bind(this)
         this.passwordError = null;
         this.genderError = null;
@@ -103,6 +104,11 @@ class SessionForm extends React.Component {
         }
     }
 
+    previousModal(e){
+        e.preventDefault()
+        this.setState({page: 0})
+    }
+
   
     update(field){
         return e => this.setState({[field]: e.target.value})
@@ -165,9 +171,11 @@ class SessionForm extends React.Component {
                             value={this.state.email} // this.props.state.email
                             onChange={this.update("email")}
                             required
-                            />
+                            >    
+                            </input>
                         </label>
                         <br />
+                        {/* <a className="prev-button" onClick={this.previousModal}></a>    */}
                         <h2 className="password-header">{ loginOnly ? "" : "Choose a password"}</h2>
                         <label>
                             <input 
