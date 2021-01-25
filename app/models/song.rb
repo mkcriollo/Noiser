@@ -1,6 +1,5 @@
 class Song < ApplicationRecord
     validates :artist_id, :title, presence: true
-    validates :artist_id, unique: true 
 
     belongs_to :user,
         primary_key: :id,
