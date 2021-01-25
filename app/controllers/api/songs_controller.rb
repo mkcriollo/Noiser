@@ -10,7 +10,7 @@ class Api::SongsController < ApplicationController
         if @song.save!
             render :show
         else 
-            render json: @song.errors.full_messages, status :422
+            render json: @song.errors.full_messages, status: 422
         end
     end
 
