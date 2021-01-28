@@ -36,5 +36,5 @@ export const login = formUser => dispatch => (
     ), err => dispatch(receiveErrors(err.responseJSON)))
 )
 export const logout = formUser => dispatch => (
-    SessionApiUtil.logout(formUser).then(() => dispatch(logoutUser()))
+    SessionApiUtil.logout(formUser).then(() => dispatch(logoutUser(formUser)))
 )

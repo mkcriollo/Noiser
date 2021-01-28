@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/mkcriollo/Noiser/issues"
   },
-  "homepage": "https://github.com/mkcriollo/Noiser#readme"
+  "homepage": "https://github.com/mkcriollo/Noiser#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1"
+  }
 }

@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
     handleDemoSubmit(e){
         e.preventDefault();
         this.props.processForm({
-            email: "TestDemo@gmail.com",
+            email: "asaprocky@gmail.com",
             password: "password123"
         }).then(this.props.closeModal())
     }
@@ -162,7 +162,7 @@ class SessionForm extends React.Component {
                 <div className="modal-two">
                     <h2 className="create-account-text">{loginOnly ? "" : "Create your Noiser Account" }</h2>
                     <br />
-                    <form onSubmit={ loginOnly ? this.handleSubmit : this.handleModalUpdate2}>
+                    <form className="email-container" onSubmit={ loginOnly ? this.handleSubmit : this.handleModalUpdate2}>
                        
                         <label>
                             <input 
@@ -173,9 +173,9 @@ class SessionForm extends React.Component {
                             required
                             >    
                             </input>
+                            <button className={`prev-button-${loginOnly ? "login" : "create"}`} onClick={this.previousModal}></button> 
                         </label>
-                        <br />
-                        {/* <a className="prev-button" onClick={this.previousModal}></a>    */}
+                        <br />  
                         <h2 className="password-header">{ loginOnly ? "" : "Choose a password"}</h2>
                         <label>
                             <input 

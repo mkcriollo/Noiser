@@ -1,15 +1,18 @@
 import { connect } from "react-redux";
 import Discover from "./discover"
+import { receiveAllSongs } from "../../actions/song_actions";
 
 const mSTP = (state,ownProps) => {
+  debugger
     return {
-      currentUser: state.entities.users[state.session.id]
+      currentUser: state.entities.users[state.session.id],
+      songs: Object.values(state.entities.songs)
     }
 }
 
 const mDTP = dispatch => {
     return {
-
+      getAllSongs: () => dispatch(receiveAllSongs())
     }
 }
 

@@ -1,0 +1,332 @@
+/* CSS reset */
+
+/*css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* song show page*/
+
+.song-show-center {
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.4%;
+}
+
+.main-song-show{
+    width: 1200px;
+    height: 340px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(34, 29, 55);
+    /* display: flex;
+    justify-content: center; */
+}
+
+.song-show-player {
+    width: 825px;
+    height: 330px;
+    background-color:  rgb(34, 29, 55);
+    float: left;
+    /* margin-top: 10px; */
+}
+
+.song-show-pic {
+    width: 320px;
+    height: 320px;
+    background-color:  rgb(34, 29, 55);
+    float: right;
+    border: none;
+    border-color: rgb(34, 29, 55);
+}
+
+.song-show-title {
+    height: 73px;
+    width: 740px;
+    margin-left: 6%;
+    background-color:  rgb(34, 29, 55);
+}
+
+.song-show-play {
+    width: 73px;
+    height: 73px;
+    float: left;
+    border-radius: 50%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjE4cHgiIGhlaWdodD0iMjlweCIgdmlld0JveD0iMCAwIDE4IDI5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4yLjIgKDk5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPlBsYXkgNjA8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iYnV0dG9ucyIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2NjUuMDAwMDAwLCAtODE4LjAwMDAwMCkiIGZpbGw9IiNGRkZGRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTY2NSw4NDcgTDE2NjkuMTUzODUsODMyLjUgTDE2NjUsODE4IEwxNjgzLDgzMi41IEwxNjY1LDg0NyBaIiBpZD0iUGxheS02MCIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+    background-size: 40% 60%;
+    background-position: 60%;
+    background-repeat: no-repeat;
+    border:none;
+    border-color: #f50;
+    background-color: #f50;
+}
+
+.header-show-info {
+    width: 650px;
+    height: 73px;
+    background-color:  rgb(34, 29, 55);
+    float: right;
+}
+
+.header-show-info h3 {
+    height: 24px;
+    width: 400px;
+    background-color:  rgb(34, 29, 55);
+    /* margin-top: 3px; */
+    text-align: left;
+    padding-left: 7px;
+    padding-top: 15px;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header-show-info h2 {
+    height: 42px;
+    width: 400px;
+    background-color:  rgb(34, 29, 55);
+    text-align: left;
+    padding-top: 15px;
+    margin-top: 10px;
+    padding-left: 7px;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+}
+
+.header-show-info p {
+    float: right;
+    font-size: 16px;
+    color: #f2f2f2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.waveform-show {
+    width: 750px;
+    height: 73px;
+    background-color:#fff;
+    margin-top: 160px;
+    margin-left: 45px;
+}
+
+/* song show body */
+
+.song-show-body {
+    width: 1240px;
+    height: 450px;
+    /* height: 100vh; */
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.song-info{
+    width: 880px;
+    height: 350px;
+    background-color: #fff;
+    float: left;
+}
+
+.song-show-banner{
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+    float: right;
+    margin-top: 70px;
+    margin-right: 30px;
+    /* background: url(https://assets.lnwy.co/app/uploads/2017/10/10140549/00-soundcloud-rap-ryan-scott-hero-1-1200x900.jpg); */
+    background: url(https://va.sndcdn.com/box/DashboxTestimonials_300x250_Shenseea.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.actions-tab-show{
+    width: 849px;
+    height: 78px;
+    background-color: grey;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.about-show {
+    width: 849px;
+    height: 212px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.about-left{
+    width: 125px;
+    height: 191px;
+    background-color: #fff;
+    float: left;
+    margin: 10px 0px 0px 10px
+}
+
+.about-right {
+    width: 670px;
+    height: 191px;
+    background-color: #fff;
+    float: right;
+    margin: 10px 15px 0px 0px
+}
+
+.image-icon{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.about-left h2 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.about-left button {
+    border-color: #ff5500;
+    color: #ff5500;
+    border: 1px solid;
+    height: 22px;
+    width: 60px;
+    padding: 2px 9px 2px 8px;
+    align-items: center;
+    border-radius: 3px;
+    font-size: 11px;
+    background-color: transparent;
+    margin-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about-right p {
+    font-size: 14px;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.total-comments {
+    width: 650px;
+    height: 22px;
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+    border-bottom: 1px solid #999999;
+}
+.comment-icon {
+    background: url(https://i0.wp.com/alicekeeler.com/wp-content/uploads/2019/03/Google-Docs-Comment-Icon.png?ssl=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 22px;
+    width: 22px;
+}
+.total-comments span {
+    color: #999999;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.comment-body {
+    width: 650px;
+    height: 40px;
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 15px;
+    display: flex;
+    justify-content: left;
+}
+
+.profile-show-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-image: url(https://icon-library.com/images/personal-profile-icon/personal-profile-icon-3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.c-body-left {
+    width: 523px;
+    height: 28px;
+}
+
+.c-body-left p:first-child{
+    font-size: 12px;
+    color: #999999;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.c-body-left p:last-child{
+    font-size: 12px;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+    margin-left: 5px;
+}
+
+.c-body-right {
+    width: 76px;
+    height: 28px;
+    color: #999999;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    margin-left: 15px;
+}

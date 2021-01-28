@@ -13,8 +13,11 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
-                    query: {
-                        presets: ['@babel/env', '@babel/react']
+                    options: {
+                        presets: ['@babel/preset-env',
+                            '@babel/react', {
+                                'plugins': ['@babel/plugin-proposal-class-properties']
+                            }]
                     }
                 },
             }

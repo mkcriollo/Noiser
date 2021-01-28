@@ -50,19 +50,38 @@ table {
 
 /* main discover page */
 
-.app-discover {
-    background-color: #f2f2f2;
+/* .app-discover {
+	background-color: red;
     width: 1879px;
     height: 3638px;
+} */
+.app-discover {
+	background-color: #f2f2f2;
+    width: 100%;
+    height: 3638px;
+	margin: 0 auto;
+	margin-top: 2%;
 }
+
+
+
+/* .discover-center {
+	background-color: #fff;
+	width: 1240px;
+	height: 100%;
+	margin-left: 17.1%;
+	margin-top: 2%;
+} */
 
 .discover-center {
 	background-color: #fff;
 	width: 1240px;
 	height: 100%;
 	/* padding: 46px 30px 0px 30px; */
-	margin-left: 17.1%;
-	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+    justify-content: flex-start;
 }
 /* main content */
 
@@ -90,6 +109,33 @@ table {
 	
 }
 
+
+.showing-songs {
+	width: 100%;
+	height: 300px;
+	background-color: blue;
+	overflow: hidden;
+}
+
+.inner-showing {
+	/* width: 1500px; */
+	height: inherit;
+	background-color: #fff;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+.inner-showing img {
+	width: 200px;
+	height: 200px;
+	/* background-color: red; */
+	margin-top: 40px;
+	margin-left: 10px;
+	display: inline-block;
+	text-align: center;
+}
+
+
 .mixed-selection h2 {
 	color: #333;
 	font-size: 23px;
@@ -103,21 +149,22 @@ table {
 	font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 	height: 19px;
 	width: 819px;
-	color: red;
+	color: #333;
 }
 
 
 /*sidebar content */
 
 .side-content {
-	width: 300px;
-	background-color: #fff;
+	width: auto;
+    background-color: #fff;
 	height: 100%;
-	float: right;
-	/* margin-right: 2.5%; */
+	margin: auto;
 	position: fixed;
-	left: 65.5%;
-	top: 10%;
+	margin-left: 50%;
+	margin-left: 50%;
+    margin-top: 2%;
+
 } 
 
 .dash-box {

@@ -84,9 +84,8 @@
 }
 
 .modal-child {
-  margin-top: 4vh;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -97,6 +96,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 30px;
     line-height: 20px;
+    /* position: relative; */
 }
 
 input[type="text"]#email::-webkit-input-placeholder {
@@ -134,12 +134,13 @@ input[type="text"]#email::-webkit-input-placeholder {
 }
 
 .email-prefilled-login {
-    margin-top: 125px;
+    margin-top: 110px;
     margin-bottom: 10px;
-    width: 400px;
+    width: 365px;
     height: 40px;
     border: 1px solid grey;
     border-radius: 5px;
+    padding-left: 40px;
 }
 
 .password-header {
@@ -228,22 +229,49 @@ input[type='text'].password-input::-webkit-input-placeholder{
 .email-prefilled-create {
     margin-bottom: 20px;
     margin-top: 30px;
-    width: 400px;
+    width: 365px;
     height: 40px;
     border: 1px solid grey;
     border-radius: 5px;
-    font-size: 14px
+    font-size: 14px;
+    padding-left: 40px;
 }
 
-.prev-button {
-    background-image: url(assets/pageleft-16x16-095641.png);
+.email-container{
+    position: relative;
+}
+
+.prev-button-create {
+    background-image: url(https://www.flaticon.com/svg/vstatic/svg/0/340.svg?token=exp=1611676973~hmac=758ee06afb713fdc240fc73189047bf0);
     content: "";
     display: block;
     position: absolute;
     background-repeat: no-repeat;
-    background-position: 50%;
-    width: 40px;
-    height: 40px;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: 35px;
+    left: 5px;
+    /* left: 2vw; */
+    background-color: #fff;
+    position: absolute;
+}
+
+.prev-button-login {
+    background-image: url(https://www.flaticon.com/svg/vstatic/svg/0/340.svg?token=exp=1611676973~hmac=758ee06afb713fdc240fc73189047bf0);
+    content: "";
+    /* display: block; */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    bottom: 225px;
+    left: 5px;
+    /* left: 2vw; */
+    background-color: #fff;
+    position: absolute;
 }
 
 

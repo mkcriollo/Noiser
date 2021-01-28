@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import SplashContainer from '../components/splash/splash_conatiner'
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import DiscoverContainer from "./discover/discover_container";
+import UploadContainer from "./upload/upload_container";
+import SongContainer from "./songs/songs_container";
+import Musicplayer from './musicplayer/music_player_container';
+
 
 const App = () => (
     <div>
@@ -15,8 +19,10 @@ const App = () => (
         <Switch>
             <AuthRoute exact path='/' component={SplashContainer}/>
             <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
+            <ProtectedRoute exact path="/upload" component={UploadContainer} />
+            <ProtectedRoute exact path="/songs/:songId" component={SongContainer} />
         </Switch>
-
+        {/* <Musicplayer /> */}
     </div>
 )
 

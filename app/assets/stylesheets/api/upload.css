@@ -1,0 +1,470 @@
+/* css reset */
+
+/*css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* upload main */
+
+.app-discover1 {
+    height: 100%;
+    width: 1240px;
+    background-color: #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.creators-tab {
+    width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 48px;
+    padding: 0px, 30px, 0px, 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #cccccc;
+    margin-top: 45px;
+}
+
+.creators-tab ul {
+    display: flex;
+    justify-content: left; 
+}
+.creators-tab li {
+    margin: 0px 3px 6px 20px;
+    color: #333;
+    border-bottom: 1px solid transparent;
+    line-height: 48px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+#upload-only {
+    color: #ff5500;
+    border-bottom: 1px solid #ff5500;
+}
+
+.creators-tab li:hover {
+    border-bottom: 1px solid black;
+}
+
+
+
+/* upload_file */
+
+
+.upload-main {
+    width: 1240px;
+    height: 100vh;
+    background: url(https://assets.lnwy.co/app/uploads/2017/10/10140549/00-soundcloud-rap-ryan-scott-hero-1-1200x900.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+}
+
+
+.upload-screen {
+    height: 388px;
+    width: 800px;
+    margin: auto;
+    /* margin-top: 15%; */
+    background-color: rgba(14, 13, 13, 0.755);
+    border: 1px solid rgba(14, 13, 13, 0.755);
+    box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+.upload-screen h2 {
+    margin-top: 16%;
+    font-size: 22px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.upload-screen input {
+   	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    width: 277px;
+    margin-top: 3%;
+    color: #fff;
+    display: inline-block;
+    background-color: #ff5500;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    text-align: center;
+    vertical-align: baseline;
+    padding: 2px 11px 2px 10px;
+    border: 1px solid #ff5500;
+    height: 26px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* File Details */
+
+.file-details-main {
+    width: 1240px;
+    height: 100vh;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+}
+
+.basic-file-box {
+    width: 823px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+    border-radius: 2px;
+    /* display: flex;
+    justify-content: left; */
+    overflow:auto;
+}
+
+.file-header {
+    display: flex;
+    justify-content: left;
+    border-bottom: 1px solid blue;
+    width: 748px;
+    height: 39px;
+    margin: 13px 0px 0px 13px;
+}
+
+
+.file-info {
+    width: 100%;
+    height: 320px; 
+    background-color: #fff;
+    margin-top: 3%;
+}
+
+.file-header h2 {
+    margin: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.picture-holder {
+    width: 260px;
+    height: 260px;
+    float: left;
+    margin: 2.5% 0px 2.5% 4.5%;
+}
+
+.song-artwork-upload {
+    width: 260px;
+    height: 260px;
+    background-image: linear-gradient(135deg,#846170,#70929c);
+    float: left;
+    margin: 2.5% 0px 2.5% 4.5%;
+}
+
+.song-artwork-upload2 {
+    width: 260px;
+    height: 260px;
+    background-image: linear-gradient(135deg,#846170,#70929c);
+    float: left;
+    margin: 2.5% 0px 2.5% 4.5%;
+}  
+
+
+.upload-button-holder {
+    margin-bottom: 170px; 
+    margin-left: 30%;
+    height: 30px;
+}
+
+.upload-image {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+
+.upload-image + label {
+    padding: 2px 11px 2px 10px;
+    border: 1px solid #e5e5e5;
+    background-color: #ff5500;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    cursor: pointer;
+    font-weight: 100px;
+    color: #fff;
+}
+
+
+
+.song-details {
+    width: 471px;
+    height: 320px;
+    background-color: #fff;
+    float: right;
+    align-items: center;
+}
+
+.song-details p {
+    font-size: 12px;
+    margin: 10px;
+    color: #333;
+}
+
+.song-details input {
+    margin-left: 10px;
+    width: 430px;
+    height: 26px;
+    padding: 2px 7px 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+
+}
+.song-details select {
+    margin-left: 10px;
+    width: 193.297px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+/* .song-details select::after {
+    color: #ff5500;
+    background-color: red;
+} */
+
+.song-details textarea {
+    margin-left: 10px;
+    padding: 2px 7px 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: border-color .1s;
+    height: 124px;
+    width: 430px;
+}
+
+/* uploader footer */
+
+.upload-footer {
+    width: 100%;
+    height: 26px;
+    padding: 35px 25px 20px 25px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+}
+
+.upload-footer p {
+    margin-right: 67%;
+    margin-left: 15px;
+    font-size: 12px;
+    color: #333;
+}
+
+.upload-footer button {
+    margin-left: 10px;
+}
+
+.cancel-button-upload {
+    border: none;
+    background-color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px; 
+}
+
+.save-button-upload {
+    background-color: #ff5500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    width: 53px;
+    height: 26px;
+    padding: 2px 11px 2px 11px;
+    border: 1px solid #e5e5e5;
+    line-height: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+/*success page */
+
+.success-main {
+    width: 1240px;
+    height: 100vh;
+    background:url(https://blog.bannersnack.com/wp-content/uploads/2018/06/design-a-soundcloud-banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+}
+
+/* .upload-again {
+    width: 752px;
+    height: 68px;
+    padding: 10px 24px;
+    background-color: red;
+    margin-left: 18%;
+} */
+
+.current-song-success {
+   margin-top: 7%;
+   width: 748px;
+   height: 128px;
+   padding: 25px;
+   border: 1px solid #f2f2f2; 
+   background-color: #fff;
+   margin-left: auto;
+   margin-right: auto;
+   box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+   border-radius: 5px;
+   display: flex;
+}
+
+.upload-song-pic {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+}
+
+.upload-info {
+    width: 367px;
+    height: 128px;
+    background-color: transparent;
+    margin-left: 2%;
+}
+
+.upload-username {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #999;
+    line-height: 1.3px;
+    margin-top: 2%;
+}
+
+.upload-song-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 1.3px;
+    margin-top: 7%;
+    margin-bottom: 15%;
+}
+
+.link-to-song {
+    margin-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.3px;
+    color: #38d;
+    text-decoration: none;
+    font-weight: 400px;
+    cursor: pointer;  
+}
+
+.link-to-song:hover {
+    margin-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.3px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 400px;
+    cursor: pointer;  
+}
+
+.upload-complete {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 2%;
+}
+
+.success-message {
+    width: 230px;
+    height: 120px;
+    background-color: #fff;
+    margin: auto;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500px;
+    line-height: 33px;
+    margin-left: 10px;
+}

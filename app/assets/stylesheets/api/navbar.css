@@ -58,8 +58,24 @@ table {
     justify-content: center;
     background-color: #333;
     height: 46px;
-    width: 100%;
+    width: 100vw;
     position: fixed;
+    z-index: 2;
+}
+
+
+.holder{
+    width: 18vw;
+    height: 46px;
+    background-color: yellow;
+}
+
+.nav-holder {
+    width: 1240px;
+    height: 46px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
 }
 
 .navbar button:hover {
@@ -71,16 +87,22 @@ table {
 }
 
 .logo {
+    text-decoration: none;
     height: 46px;
-    width: 69px;
+    width: 5vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #ff5502;
     color: #fff;
     border: none;
     cursor: pointer;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-nav {
+    text-decoration: none;
     cursor: pointer;
     display: block;
     padding: 12px 1px 12px 0px;
@@ -89,7 +111,7 @@ table {
     box-sizing: border-box;
     text-align: center;
     height: 46px;
-    width: 103px;
+    width: 5vw;
     color: #ccc;
     background-color: #333;
     font: 70 14px/1.5 Interstate,Lucida Grande,Arial,sans-serif;
@@ -137,10 +159,11 @@ table {
 }
 
 .upload-header {
+    text-decoration: none;
     cursor: pointer;
     display: block;
-    padding: 12px 10px 12px 10px;
-    height: 46px;
+    padding: 14px 10px 12px 13px;
+    height: 20px;
     background-color: #333;
     color: #ccc;
     border: none;
@@ -169,21 +192,18 @@ table {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #cccccc;
     font-size: 14px;
-    margin-right: 45px;
+    /* margin-right: 45px; */
+    width: 96px;
 }
 
 .arrow-button {
     cursor: pointer;
-    float: right;
-    content: "";
-    right: 475px;
-    top: 23px;
-    position: absolute;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjhweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCA4IDUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCAzLjIuMiAoOTk4MykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+RHJvcGRvd248L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iVG9wLUJhciIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNjYuMDAwMDAwLCAtNTQ1LjAwMDAwMCkiIGZpbGw9IiNGRkZGRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjA2Nyw1NDUuMDIyNzQ2IEwyMDY2LDU0Ni4wMjI3NDYgTDIwNjkuOTU0NzYsNTQ5Ljk3NzUxMSBMMjA3My45Nzc1MSw1NDUuOTU0NzY1IEwyMDcyLjk3NzUxLDU0NC45NTQ3NjUgTDIwNjkuOTU0NzYsNTQ3Ljk3NzUxMSBMMjA2Nyw1NDUuMDIyNzQ2IFoiIGlkPSJEcm9wZG93biIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
     background-repeat: no-repeat;
     width: 8px;
     height: 5px;
     opacity: .75;
+    margin-top: 23px;
 }
 
 .user-profile-header {
@@ -194,8 +214,9 @@ table {
 
 .dropdown {
   background-color:#333;
-  width: 170.14px;
+  width: 190.14px;
   height: 46px;
+  display: flex;
 }
 
 .dropdown-menu {
@@ -216,7 +237,7 @@ table {
   height: 224px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 10px 0px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .right-drop {
@@ -228,7 +249,7 @@ table {
   height: 220px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 6px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .dropdown:hover .right-drop {
@@ -369,7 +390,7 @@ table {
     width: 168px;
     height: 32px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
     margin-top: 2.427%;
 }
 
