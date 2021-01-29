@@ -10,16 +10,16 @@ require 'open-uri'
 
 #users
 
-# user1 = User.create!(email: "kidcudi@gmail.com", password: "password123",username: "Kid Cudi", age: 36, gender: "male")
-# user2 = User.create!(email: "travisscott@gmail.com", password: "password123",username: "Travis Scott", age: 28, gender: "male")
-# user3 = User.create!(email: "asaprocky@gmail.com", password: "password123",username: "Asap Rocky", age: 32, gender: "male")
-# user4 = User.create!(email: "kodakblack@gmail.com", password: "password123",username: "Kodak Black", age: 23, gender: "male")
-# user5 = User.create!(email: "kendricklamar@gmail.com", password: "password123",username: "Kendrick Lamar", age: 33, gender: "male")
-# user6 = User.create!(email: "trippered@gmail.com", password: "password123",username: "Trippe Red", age: 21, gender: "male")
-# user7 = User.create!(email: "schoolboyQ@gmail.com", password: "password123",username: "SchoolBoy Q", age: 34, gender: "male")
-# user8 = User.create!(email: "isaiahrashad@gmail.com", password: "password123",username: "Isaiah Rashad", age: 29, gender: "male")
-# user9 = User.create!(email: "kanyewest@gmail.com", password: "password123",username: "Kanye West", age: 43, gender: "male")
-# user10 = User.create!(email: "sheckwes@gmail.com", password: "password123",username: "Sheck Wes", age: 22, gender: "male")
+user1 = User.create!(email: "kidcudi@gmail.com", password: "password123",username: "Kid Cudi", age: 36, gender: "male")
+user2 = User.create!(email: "travisscott@gmail.com", password: "password123",username: "Travis Scott", age: 28, gender: "male")
+user3 = User.create!(email: "asaprocky@gmail.com", password: "password123",username: "Asap Rocky", age: 32, gender: "male")
+user4 = User.create!(email: "kodakblack@gmail.com", password: "password123",username: "Kodak Black", age: 23, gender: "male")
+user5 = User.create!(email: "kendricklamar@gmail.com", password: "password123",username: "Kendrick Lamar", age: 33, gender: "male")
+user6 = User.create!(email: "trippered@gmail.com", password: "password123",username: "Trippe Red", age: 21, gender: "male")
+user7 = User.create!(email: "schoolboyQ@gmail.com", password: "password123",username: "SchoolBoy Q", age: 34, gender: "male")
+user8 = User.create!(email: "isaiahrashad@gmail.com", password: "password123",username: "Isaiah Rashad", age: 29, gender: "male")
+user9 = User.create!(email: "kanyewest@gmail.com", password: "password123",username: "Kanye West", age: 43, gender: "male")
+user10 = User.create!(email: "sheckwes@gmail.com", password: "password123",username: "Sheck Wes", age: 22, gender: "male")
 
 
 # # # user1 = User.new(email: "example1", password: "password1",username: "Asap Rocky", age: 23, gender: "male")
