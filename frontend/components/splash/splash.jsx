@@ -4,8 +4,26 @@ import GreetingContainer from '../greeting/greeting_container'
 class Splash extends React.Component {
     constructor(props) {
         super(props);
+        debugger
     }
+
+    componentDidMount() {
+        this.props.getAllSongs()
+    }
+                
+
     render() { 
+        let twelve = this.props.songs.slice(0,12)
+
+        const newSongs = twelve.map(song => {
+            return (
+                <div onClick={() => this.props.openModal("signup")} className ="song-splash">
+                    <img src={song.photoUrl} />
+                    {/* {song.title} */}
+                </div>
+            );
+        });
+
         return ( 
             <div className="splash-container">
                 <div className="slideshow-container">
@@ -22,7 +40,9 @@ class Splash extends React.Component {
                         <button className="splash-upload-button" onClick={() => this.props.openModal("signup")}>Upload your Own</button>
                     </div>
                     <div className="trending-tracks-title">Hear what's trending for free in the Noiser community</div>
-
+                    <div className="splash-songs">
+                        {newSongs}
+                    </div>
                     <button className="explore-music-button" value="Explore trending playlists" onClick={() => this.props.openModal("signup")}>Explore trending playlists</button>
                 </div>
                 <div className="banner-mobile">

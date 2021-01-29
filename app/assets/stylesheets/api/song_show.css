@@ -151,7 +151,7 @@ table {
 .waveform-show {
     width: 750px;
     height: 73px;
-    background-color:#fff;
+    background-color:  rgb(34, 29, 55);
     margin-top: 160px;
     margin-left: 45px;
 }
@@ -160,7 +160,7 @@ table {
 
 .song-show-body {
     width: 1240px;
-    height: 450px;
+    height: 500px;
     /* height: 100vh; */
     margin: 0 auto;
     background-color: #fff;
@@ -190,7 +190,7 @@ table {
 .actions-tab-show{
     width: 849px;
     height: 78px;
-    background-color: grey;
+    background-color:#fff;
     margin: auto;
     margin-top: 20px;
 }

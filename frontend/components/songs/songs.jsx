@@ -1,7 +1,7 @@
 import React from 'react';
 import Musicplayer from "../musicplayer/music_player_container";
 import Navbar from "../navbar/navbar_container";
-// import WaveSurfer from 'wavesurfer.js';
+
 
 class Songs extends React.Component {
     constructor(props) {
@@ -13,12 +13,10 @@ class Songs extends React.Component {
     componentDidMount(){
         this.props.getSong(this.props.match.params.songId)
     }
-    render() { 
 
-        // const wavef = document.getElementById("waveform")
-        // var wavesurfer = WaveSurfer.create({
-        //     container: wavef
-        // });
+
+
+    render() { 
         if(!this.props.song) {
             return null;
         }
@@ -37,6 +35,9 @@ class Songs extends React.Component {
                                 </div>
                             </div>
                             <div className="waveform-show">
+                                {/* <div id="waveform">
+
+                                </div> */}
                             </div>
                         </div>
                         <img className="song-show-pic" src={this.props.song.photoUrl} ></img>

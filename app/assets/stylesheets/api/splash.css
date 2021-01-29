@@ -154,6 +154,27 @@ table {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.splash-songs {
+    width: 1200px;
+    height: 350px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.song-splash {
+    width: 179px;
+    height: 179px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.song-splash img {
+    width: 179px;
+    height: 179px;
+}
+
 .splash-upload-button {
     cursor: pointer;
     margin-top: 60px;
@@ -176,7 +197,7 @@ input[type="text"].searchbar {
 .trending-tracks-title {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 100px;
+    margin-top: 30px;
     font-size: 24px;
     color: #333333;
 }

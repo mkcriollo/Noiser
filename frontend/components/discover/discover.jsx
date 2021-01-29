@@ -14,7 +14,6 @@ class Discover extends React.Component {
 
     componentDidMount(){
         this.props.getAllSongs()
-        debugger
     }
 
     // playMusicBar(e){
@@ -38,8 +37,12 @@ class Discover extends React.Component {
 
         let rockPlaylist = []
         let rapPlaylist = []
-        let uploadSongs = []
         let chill80Songs = []
+        let danceLatin = []
+        let trapPlaylist = []
+        let rnbPlaylist = []
+        let workoutPlaylist = []
+        let feelGoodplaylist = []
 
         songs.map(song => {
            switch (song.genre){
@@ -48,11 +51,83 @@ class Discover extends React.Component {
                     break
                case "Throwbacks":
                    chill80Songs.push(song)
-                   break
+                    break
                case "Rap":
                     rapPlaylist.push(song)
+                    break
+               case "Latin":
+                    danceLatin.push(song)
+                    break
+                case "Trap":
+                    trapPlaylist.push(song)
+                    break
+                case "R&B":
+                    rnbPlaylist.push(song)
+                    break
+                case "Workout":
+                    workoutPlaylist.push(song)
+                    break
+                case "Pop":
+                    feelGoodplaylist.push(song)
+                    break
            }
         })
+
+
+        const trapSongs = trapPlaylist.map((song, i) => {
+            return (
+                <Link key={i} to={`/songs/${song.id}`}>
+                    <img src={song.photoUrl} />
+                </Link>
+            );
+        });
+
+
+        const feelGoodSongs = feelGoodplaylist.map((song, i) => {
+            return (
+                <Link key={i} to={`/songs/${song.id}`}>
+                    <img src={song.photoUrl} />
+                </Link>
+            );
+        });
+
+
+
+        const workoutSongs = workoutPlaylist.map((song, i) => {
+            return (
+                <Link key={i} to={`/songs/${song.id}`}>
+                    <img src={song.photoUrl} />
+                </Link>
+            );
+        });
+
+
+        const rnbSongs = rnbPlaylist.map((song, i) => {
+            return (
+                <Link key={i} to={`/songs/${song.id}`}>
+                    <img src={song.photoUrl} />
+                </Link>
+            );
+        });
+
+
+
+        const latinSongs = danceLatin.map((song, i) => {
+            return (
+                <Link key={i} to={`/songs/${song.id}`}>
+                    <img src={song.photoUrl} />
+                </Link>
+            );
+        });
+
+
+        const rapSongs = rapPlaylist.map((song, i) => {
+            return (
+                <Link key={i} to={`/songs/${song.id}`}>
+                    <img src={song.photoUrl} />
+                </Link>
+            );
+        });
 
         const chillSongs = chill80Songs.map((song, i) => {
             return (
@@ -68,13 +143,12 @@ class Discover extends React.Component {
             return (
                 <Link key={i} to={`/songs/${song.id}`}>
                     <img src={song.photoUrl} />
-                    <button onClick={this.playMusicBar}>a</button>
                 </Link>
             );
         });
 
 
-        const weeklySongs = songs.map((song, i) => {
+        const newSongs = songs.map((song, i) => {
             return (
                 <Link key={i} to={`/songs/${song.id}`}>
                     <img src={song.photoUrl} />
@@ -122,7 +196,7 @@ class Discover extends React.Component {
                                 <p>The lastest hits,updated all the time</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                        {weeklySongs}
+                                        {newSongs}
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +205,7 @@ class Discover extends React.Component {
                                 <p>Up-and-coming tracks on Noiser</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                       {hotSongs}
+                                       {rapSongs}
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +214,7 @@ class Discover extends React.Component {
                                 <p>Stay at home dance party</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                        {reversed}
+                                        {latinSongs}
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +223,7 @@ class Discover extends React.Component {
                                 <p>Songs for your exercise routine</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                        {hotSongs}
+                                        {workoutSongs}
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +232,7 @@ class Discover extends React.Component {
                                 <p>The latest and hottest trap</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                      {hotSongs}
+                                      {trapSongs}
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +241,7 @@ class Discover extends React.Component {
                                 <p>The latest and hottest R&B</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                       {hotSongs}
+                                       {rnbSongs}
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +250,7 @@ class Discover extends React.Component {
                                 <p>Upbeat sounds and positive vibes</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                        {hotSongs}
+                                        {feelGoodSongs}
                                     </div>
                                 </div>
                             </div>

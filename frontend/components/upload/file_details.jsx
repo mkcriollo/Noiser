@@ -71,13 +71,13 @@ class FileDetails extends React.Component {
                                 <option value="Metal">Metal</option>
                                 <option value="Piano">Piano</option>
                                 <option value="Pop">Pop</option>
-                                <option value="R&B & Soul">R&B & Soul</option>
+                                <option value="R&B">R&B</option>
                                 <option value="Reggae">Reggae</option>
                                 <option value="Reggaeton">Reggaeton</option>
                                 <option value="Rock">Rock</option>
                                 <option value="SoundTrack">SoundTrack</option>
                                 <option value=">Techno">Techno</option>
-                                <option value="Trance">Trance</option>
+                                <option value="Workout">Workout</option>
                                 <option value="Trap">Trap</option>
                                 <option value="Triphop">Triphop</option>
                                 <option value="World">World</option>
