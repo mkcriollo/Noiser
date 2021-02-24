@@ -18,7 +18,7 @@ class NavBar extends React.Component {
                     {/* <div className="holder"></div> */}
                         <div className="nav-holder">
                             <Link className="logo" to="/discover" >
-                                NOISER
+                            <i className="fas fa-cloud"></i>
                             </Link>
                             <Link className="header-nav" to="/discover">
                                 Home

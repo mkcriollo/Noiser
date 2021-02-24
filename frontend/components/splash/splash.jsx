@@ -50,7 +50,7 @@ class Splash extends React.Component {
                     <div className="mobile-info-ad">
                         <h2>Never stop listening</h2>
                         <div className="rainbow-line"></div>
-                        <p className="mobile-info-text">Noiser is soon available on Web, iOS, Android, Sonos, Chromecast, and Xbox One</p>
+                        <div className="mobile-info-text">Noiser is soon available on Web, iOS, Android, Sonos, Chromecast, and Xbox One</div>
                     </div>
                 </div>
                 <div className="noiser-teaser">

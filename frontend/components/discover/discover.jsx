@@ -32,6 +32,14 @@ class Discover extends React.Component {
         return arr;
     }
 
+    reverseArr(arr){
+        let str = []
+        for (let i = arr.length - 1; i > 0; i--) {
+            str.push(arr[i])
+        }
+        return str
+    }
+
     render() { 
         const { songs } = this.props;
 
@@ -158,8 +166,9 @@ class Discover extends React.Component {
 
 
         let randomSongs = this.randomArr(songs)
+        let reversedSongs = this.reverseArr(songs)
 
-        const reversed = songs.reverse().map((song, i) => {
+        const reversed = reversedSongs.map((song, i) => {
             return (
                 <Link key={i} to={`/songs/${song.id}`}>
                     <img src={song.photoUrl} />
@@ -196,7 +205,7 @@ class Discover extends React.Component {
                                 <p>The lastest hits,updated all the time</p>
                                 <div className="showing-songs">
                                     <div className="inner-showing">
-                                        {newSongs}
+                                        {reversed}
                                     </div>
                                 </div>
                             </div>

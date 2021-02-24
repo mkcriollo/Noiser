@@ -101,6 +101,10 @@ table {
     align-items: center;
 }
 
+.logo i {
+  font-size: 25px;
+}
+
 .header-nav {
     text-decoration: none;
     cursor: pointer;
