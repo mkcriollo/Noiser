@@ -37,6 +37,13 @@ export const receiveCurrentSong = songId => dispatch => (
     SongUtil.getSong(songId).then(song => dispatch(receiveSong(song)))
 )
 
-export const receiveAllSongs = () => dispatch => (
-    SongUtil.getSongs().then(songs => dispatch(receiveSongs(songs)))
-)
+export const receiveAllSongs = () => dispatch => {
+    return SongUtil.getSongs()
+    .then(songs => dispatch(receiveSongs(songs)))
+    .then(res => window.localStorage.setItem('songs', JSON.stringify(res.songs)))
+}
+
+export const receiveArtistSongs = userId => dispatch => {
+    return SongUtil.getArtistSongs(userId)
+    .then(songs => dispatch(receiveSongs(songs)))
+}

@@ -267,8 +267,8 @@ input[type='text'].password-input::-webkit-input-placeholder{
     top: 35px;
     left: 5px;
     /* left: 2vw; */
-    background-color: #fff;
-    position: absolute;
+    /* background-color: #fff;
+    position: absolute; */
 }
 
 .prev-button-login {
@@ -283,7 +283,7 @@ input[type='text'].password-input::-webkit-input-placeholder{
     bottom: 225px;
     left: 5px;
     /* left: 2vw; */
-    background-color: #fff;
+    /* background-color: #fff; */
     position: absolute;
 }
 

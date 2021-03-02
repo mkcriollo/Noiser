@@ -188,8 +188,8 @@ class Discover extends React.Component {
             <div className="app-discover">
                 <NavBar />
                     <div className="discover-center">
-                    <div className="main-content">
-                        <div className="loading-song">
+                        <div className="main-content">
+                            <div className="loading-song">
                             <br/>
                             <div className="mixed-selection">
                                 <h2>Charts: Top 50</h2>
@@ -282,24 +282,25 @@ class Discover extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="side-content">
-                        <div className="dash-box"></div>
-                        <div className="side-footer">
-                            <br/>
-                            <li>Legal -</li>
-                            <li>Privacy -</li>
-                            <li>Cookies -</li>
-                            <li>Imprint -</li>
-                            <li>Creator Resources -</li>
-                            <li>Blog -</li>
-                            <li>Charts -</li>
-                            <li>Popular searches</li>
-                            <br/>
-                            <a>Language:<p className="side-footer-p">English (US)</p></a>
+                        <div className="side-content">
+                            <div className="dash-box"></div>
+                            <div className="side-footer">
+                                <br/>
+                                <li>Legal -</li>
+                                <li>Privacy -</li>
+                                <li>Cookies -</li>
+                                <li>Imprint -</li>
+                                <li>Creator Resources -</li>
+                                <li>Blog -</li>
+                                <li>Charts -</li>
+                                <li>Popular searches</li>
+                                <br/>
+                                <a>Language:<p className="side-footer-p">English (US)</p></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
          );
     }

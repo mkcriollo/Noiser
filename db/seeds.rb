@@ -6,21 +6,72 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Song.destroy_all
+
 require 'open-uri'
 
 #users
 
 user1 = User.create!(email: "kidcudi@gmail.com", password: "password123",username: "Kid Cudi", age: 36, gender: "male")
-user2 = User.create!(email: "travisscott@gmail.com", password: "password123",username: "Travis Scott", age: 28, gender: "male")
-user3 = User.create!(email: "asaprocky@gmail.com", password: "password123",username: "Asap Rocky", age: 32, gender: "male")
-user4 = User.create!(email: "kodakblack@gmail.com", password: "password123",username: "Kodak Black", age: 23, gender: "male")
-user5 = User.create!(email: "kendricklamar@gmail.com", password: "password123",username: "Kendrick Lamar", age: 33, gender: "male")
-user6 = User.create!(email: "trippered@gmail.com", password: "password123",username: "Trippe Red", age: 21, gender: "male")
-user7 = User.create!(email: "schoolboyQ@gmail.com", password: "password123",username: "SchoolBoy Q", age: 34, gender: "male")
-user8 = User.create!(email: "isaiahrashad@gmail.com", password: "password123",username: "Isaiah Rashad", age: 29, gender: "male")
-user9 = User.create!(email: "kanyewest@gmail.com", password: "password123",username: "Kanye West", age: 43, gender: "male")
-user10 = User.create!(email: "sheckwes@gmail.com", password: "password123",username: "Sheck Wes", age: 22, gender: "male")
+user1_art = URI.open("https://noiser-seed.s3.amazonaws.com/kidcudiprofile.jpg")
+user1.photo.attach(io: user1_art, filename: 'kidcudiprofile.jpg')
+user1_header = URI.open("https://noiser-seed.s3.amazonaws.com/kidcudiheader.png")
+user1.backphoto.attach(io: user1_header, filename: 'kidcudiheader.png')
 
+user2 = User.create!(email: "travisscott@gmail.com", password: "password123",username: "Travis Scott", age: 28, gender: "male")
+user2_art = URI.open("https://noiser-seed.s3.amazonaws.com/travisscottprofile.jpg")
+user2.photo.attach(io: user2_art, filename: 'travisscottprofile.jpg')
+user2_header = URI.open("https://noiser-seed.s3.amazonaws.com/travisscottheader.jpg")
+user2.backphoto.attach(io: user2_header, filename: 'travisscottheader.jpg')
+
+user3 = User.create!(email: "asaprocky@gmail.com", password: "password123",username: "Asap Rocky", age: 32, gender: "male")
+user3_art = URI.open("https://noiser-seed.s3.amazonaws.com/asaprockyprofile.jpg")
+user3.photo.attach(io: user3_art, filename: 'asaprockyprofile.jpg')
+user3_header = URI.open("https://noiser-seed.s3.amazonaws.com/asaprockyheader.jpg")
+user3.backphoto.attach(io: user3_header, filename: 'asaprockyheader.jpg')
+
+user4 = User.create!(email: "kodakblack@gmail.com", password: "password123",username: "Kodak Black", age: 23, gender: "male")
+user4_art = URI.open("https://noiser-seed.s3.amazonaws.com/kodakblackprofile.jpg")
+user4.photo.attach(io: user4_art, filename: 'kodakblackprofile.jpg')
+user4_header = URI.open("https://noiser-seed.s3.amazonaws.com/kodakblackheader.png")
+user4.backphoto.attach(io: user4_header, filename: 'kodakblackheader.png')
+
+user5 = User.create!(email: "kendricklamar@gmail.com", password: "password123",username: "Kendrick Lamar", age: 33, gender: "male")
+user5_art = URI.open("https://noiser-seed.s3.amazonaws.com/kendricklamarprofile.jpg")
+user5.photo.attach(io: user5_art, filename: 'kendricklamarprofile.jpg')
+user5_header = URI.open("https://noiser-seed.s3.amazonaws.com/kendricklamarheader.jpg")
+user5.backphoto.attach(io: user5_header, filename: 'kendricklamarheader.jpg')
+
+user6 = User.create!(email: "trippered@gmail.com", password: "password123",username: "Trippe Red", age: 21, gender: "male")
+user6_art = URI.open("https://noiser-seed.s3.amazonaws.com/tripperedprofile.jpg")
+user6.photo.attach(io: user6_art, filename: 'tripperedprofile.jpg')
+user6_header = URI.open("https://noiser-seed.s3.amazonaws.com/tripperedbanner.jpg")
+user6.backphoto.attach(io: user6_header, filename: 'tripperedbanner.jpg')
+
+user7 = User.create!(email: "schoolboyQ@gmail.com", password: "password123",username: "SchoolBoy Q", age: 34, gender: "male")
+user7_art = URI.open("https://noiser-seed.s3.amazonaws.com/schoolboyqprofile.jpg")
+user7.photo.attach(io: user7_art, filename: 'schoolboyqprofile.jpg')
+user7_header = URI.open("https://noiser-seed.s3.amazonaws.com/schoolboyqheader.jpg")
+user7.backphoto.attach(io: user7_header, filename: 'schoolboyqheader.jpg')
+
+user8 = User.create!(email: "isaiahrashad@gmail.com", password: "password123",username: "Isaiah Rashad", age: 29, gender: "male")
+user8_art = URI.open("https://noiser-seed.s3.amazonaws.com/isaiahrashadprofile.jpeg")
+user8.photo.attach(io: user8_art, filename: 'isaiahrashadprofile.jpeg')
+user8_header = URI.open("https://noiser-seed.s3.amazonaws.com/isaiahrashadheader.jpg")
+user8.backphoto.attach(io: user8_header, filename: 'isaiahrashadheader.jpg')
+
+user9 = User.create!(email: "kanyewest@gmail.com", password: "password123",username: "Kanye West", age: 43, gender: "male")
+user9_art = URI.open("https://noiser-seed.s3.amazonaws.com/kanyewestprofile.jpeg")
+user9.photo.attach(io: user9_art, filename: 'kanyewestprofile.jpeg')
+user9_header = URI.open("https://noiser-seed.s3.amazonaws.com/kanyewestheader.jpg")
+user9.backphoto.attach(io: user9_header, filename: 'kanyewestheader.jpg')
+
+user10 = User.create!(email: "sheckwes@gmail.com", password: "password123",username: "Sheck Wes", age: 22, gender: "male")
+user10_art = URI.open("https://noiser-seed.s3.amazonaws.com/sheckwesprofile.jpg")
+user10.photo.attach(io: user10_art, filename: 'sheckwesprofile.jpg')
+user10_header = URI.open("https://noiser-seed.s3.amazonaws.com/sheckwesheader.jpg")
+user10.backphoto.attach(io: user10_header, filename: 'sheckwesheader.jpg')
 
 # # # user1 = User.new(email: "example1", password: "password1",username: "Asap Rocky", age: 23, gender: "male")
 

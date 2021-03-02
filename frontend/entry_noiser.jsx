@@ -6,12 +6,24 @@ import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root')
+
+      // LOCAL STORAGE
+    let songs;
+    let users;
+    if (window.localStorage.getItem("songs")) {
+        songs = JSON.parse(window.localStorage.getItem('songs'));
+    }
+    if (window.localStorage.getItem("users")) {
+        users = JSON.parse(window.localStorage.getItem('users'));
+    }
+    debugger
     // const store = configureStore()
     let store;
     if (window.currentUser) {
         const preloadedState = {
             entities: {
-                users: { [window.currentUser.id]: window.currentUser }
+                users: { [window.currentUser.id]: window.currentUser },
+                songs: songs
             },
             session: { id: window.currentUser.id }
         };

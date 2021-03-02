@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
     has_many :songs, 
         primary_key: :id,
-        foreign_key: :song_id,
+        foreign_key: :artist_id,
         class_name: :Song
     
 
@@ -30,6 +30,9 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :Playlist
+
+    has_one_attached :photo
+    has_one_attached :backphoto
     
 
 

@@ -77,7 +77,7 @@ table {
 .login-button {
     cursor: pointer;
     background-color: rgba(14, 13, 13, 0.755);
-    border-color: blac;
+    /* border-color: blac; */
     padding: 6px 15px;
     margin-top: 20px;
     margin-right: 20px;

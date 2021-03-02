@@ -4,6 +4,12 @@ export const getSongs = () => (
         url: "/api/songs",
     })
 )
+export const getArtistSongs = (userId) => (
+    $.ajax({
+        method: "GET",
+        url: `/api/users/${userId}/songs`
+    })
+)
 export const getSong = songId => (
     $.ajax({
         method: "GET",
