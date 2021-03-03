@@ -6,7 +6,7 @@ import { receiveAllSongs } from "../../actions/song_actions";
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         songs: Object.values(state.entities.songs)
     }

@@ -8,7 +8,7 @@ class Discover extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  }
-        debugger
+        
         // this.playMusicBar = this.playMusicBar.bind(this)
     }
 

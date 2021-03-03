@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 class SuccessFile extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        
         // this.state = {play: false}
         // this.audio = new Audio(props.state.songFile)
 
@@ -31,7 +31,7 @@ class SuccessFile extends React.Component {
    
     
     render() { 
-        debugger
+        
         if(this.props.state.page === 2){
         return ( 
         <div>

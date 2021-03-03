@@ -57,7 +57,7 @@ class Upload extends React.Component {
         if(this.state.photoFile){
             formData.append('song[photo]', this.state.photoFile);
         }
-        debugger
+        
         this.props.createSong(formData).then(song => {
             this.setState({
                 page: 2,
@@ -70,9 +70,9 @@ class Upload extends React.Component {
     changeUpload(e){
         e.preventDefault()
         let currentFile = e.target.files[0]
-        debugger
+        
         if(currentFile && currentFile.type === "audio/mpeg"){ 
-            debugger
+            
             this.setState({
                 page: 1,
                 title: currentFile.name.split(".")[0],

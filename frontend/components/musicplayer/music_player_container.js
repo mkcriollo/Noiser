@@ -3,7 +3,7 @@ import Musicplayer from "./music_player";
 import { pauseSong, playSong } from "../../actions/music_player";
 
 const mSTP = (state,ownProps) => {
-    debugger
+    
     // const currentSong = state.entities.songs[state.ui.musicPlayer.currentSongId] ? state.entities.songs[state.ui.musicPlayer.currentSongId] : null;
     return {
         songs: state.entities.songs,

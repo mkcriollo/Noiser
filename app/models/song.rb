@@ -6,6 +6,11 @@ class Song < ApplicationRecord
         foreign_key: :artist_id,
         class_name: :User
 
+    has_many :comments,
+        foreign_key: :song_id,
+        class_name: :Comment,
+        dependent: :destroy
+
     has_one_attached :photo
     has_one_attached :song
 end

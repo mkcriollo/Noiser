@@ -4,7 +4,7 @@ export const RECEIVE_USERS = "RECEIVE_USERS"
 export const RECEIVE_USER = "RECIEVE_USER"
 
 const receiveUsers = users => {
-    debugger
+    
     return {
         type: RECEIVE_USERS,
         users
@@ -12,7 +12,7 @@ const receiveUsers = users => {
 };
 
 const receiveUser = user => {
-    debugger
+    
     return {
         type: RECEIVE_USER,
         user

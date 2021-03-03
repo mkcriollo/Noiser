@@ -4,7 +4,7 @@ import GreetingContainer from '../greeting/greeting_container'
 class Splash extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        
     }
 
     componentDidMount() {

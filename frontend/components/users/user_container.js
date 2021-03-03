@@ -8,7 +8,7 @@ const mSTP = (state,ownProps) => {
     const userSongs = Object.values(state.entities.songs)
     .filter(song => song.artist_id === parseInt(ownProps.match.params.userId));
 
-    debugger
+    
     return {
         userSongs: userSongs,
         user: state.entities.users[ownProps.match.params.userId],

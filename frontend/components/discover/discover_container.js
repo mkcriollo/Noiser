@@ -3,7 +3,7 @@ import Discover from "./discover"
 import { receiveAllSongs } from "../../actions/song_actions";
 
 const mSTP = (state,ownProps) => {
-  debugger
+  
     return {
       currentUser: state.entities.users[state.session.id],
       songs: Object.values(state.entities.songs)

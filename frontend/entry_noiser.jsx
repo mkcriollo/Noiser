@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.localStorage.getItem("users")) {
         users = JSON.parse(window.localStorage.getItem('users'));
     }
-    debugger
+    
     // const store = configureStore()
     let store;
     if (window.currentUser) {
