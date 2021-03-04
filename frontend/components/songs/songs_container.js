@@ -14,6 +14,7 @@ export const mSTP = (state,ownProps) => {
     return {
         users: Object.values(state.entities.users),
         comments: Object.values(state.entities.comments),
+        songs: Object.values(state.entities.songs),
         artist: artist,
         currentUser: state.entities.users[state.session.id],
         song: song
@@ -26,7 +27,7 @@ export const mDTP = dispatch => {
         createSong: song => dispatch(createNewSong(song)),
         deleteSong: songId => dispatch(deleteCurrentSong(songId)),
         getSong: songId => dispatch(receiveCurrentSong(songId)),
-        getAllSongs: () => dispatch(receiveAllSongs(songs)),
+        getAllSongs: () => dispatch(receiveAllSongs()),
         receiveOneSong: songId => dispatch(receiveOneSong(songId)),
         createComment: comment => dispatch(createComment(comment)),
         deleteComment: commentId => dispatch(deleteComment(commentId)),

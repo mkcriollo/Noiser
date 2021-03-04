@@ -118,6 +118,10 @@ table {
     float: right;
 }
 
+.header-show-info > a {
+    text-decoration: none;
+}
+
 .header-show-info h3 {
     height: 24px;
     width: fit-content;
@@ -127,8 +131,12 @@ table {
     padding-left: 7px;
     padding-right: 7px;
     padding-top: 15px;
-    color: #fff;
+    color: #ccc;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header-show-info h3:hover {
+    color: #fff;
 }
 
 .header-show-info h2 {
@@ -167,13 +175,14 @@ table {
     height: 100vh;
     margin: 0 auto;
     background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .song-info{
     width: 880px;
     height: 350px;
     background-color: #fff;
-    border-right: 1px solid #f2f2f2;
     margin-top: 20px;
     float: left;
 }
@@ -182,14 +191,14 @@ table {
     width: 300px;
     height: 250px;
     background-color: #fff;
-    float: right;
-    margin-top: 70px;
+    margin-top: 10px;
     margin-right: 30px;
     /* background: url(https://assets.lnwy.co/app/uploads/2017/10/10140549/00-soundcloud-rap-ryan-scott-hero-1-1200x900.jpg); */
     background: url(https://va.sndcdn.com/box/DashboxTestimonials_300x250_Shenseea.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    margin-left: 15px;
 }
 
 .actions-tab-show{
@@ -265,12 +274,17 @@ table {
     border-radius: 50%;
     margin-top: 2px;
     margin-left: 2px;
+    object-fit: cover;
 }
 
 .about-left h2 {
     font-size: 16px;
     color: #333;
     margin-top: 10px;
+}
+
+.about-left > a {
+    text-decoration: none;
 }
 
 .about-left button {
@@ -325,12 +339,60 @@ table {
     margin-top: 6px;
 }
 
+/* other-tracks */
+
+.other-songs-container{
+    margin-top: 10%;
+    margin-left: 15px;
+}
+
+.songs-holder {
+    min-height: 60px;
+    border-radius: 4px;
+    margin-right: -6px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.other-songs-img {
+    margin-right: 4px;
+    padding: 5px 6px;
+    width: 50px;
+    height: 50px;
+}
+
+.other-songs-info {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.related-tracks{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 5px;
+    color: #999;
+    font-size: 14px;
+}
+
+
+.right-song-info {
+    border-left: 1px solid #f2f2f2;
+    margin-top: 20px;
+}
+
+.other-song-name {
+    color: #333;
+}
+
+.other-songs-info > a {
+    text-decoration: none;
+}
 
 /* comments */
 
 .show-comments {
-    border-right: 1px solid #f2f2f2;
-    margin-right: -31px;
 }
 
 .song-comment-holder {
@@ -353,6 +415,10 @@ table {
 .comment-info-body {
     width: 523px;
     height: 28px;
+}
+
+.comment-info-body > a {
+    text-decoration: none;
 }
 
 .comment-info-body > p {
@@ -380,3 +446,4 @@ table {
     margin: 0 auto;
     margin-left: 5px;
 }
+

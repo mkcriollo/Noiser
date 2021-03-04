@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Musicplayer from "../musicplayer/music_player_container";
 import Navbar from "../navbar/navbar_container";
 
@@ -19,6 +20,7 @@ class Songs extends React.Component {
         this.props.getSong(this.props.match.params.songId);
         this.props.fetchSongComments(this.props.match.params.songId);
         this.props.fetchUsers();
+        this.props.getAllSongs();
     }
 
     update(field){
@@ -53,25 +55,54 @@ class Songs extends React.Component {
         if(!this.props.comments){
             return null;
         }
+
+        if(!this.props.songs){
+            return null;
+        }
   
-        let { artist } = this.props;
-        let { currentUser } = this.props;
-        let { comments } = this.props;
+        let { comments, songs, currentUser, artist } = this.props;
 
         let currentComments = comments.reverse()
 
         let allSongComments = currentComments.map((comment, i) => {
             return (
                <div className="song-comment-holder">
-                   <img src={currentUser.photoUrl} alt="" className="comment-user-pic"/>
+                   <Link to={`/users/${currentUser.id}`}>
+                        <img src={currentUser.photoUrl} alt="" className="comment-user-pic"/>
+                   </Link>
                    <div className="comment-info-body">
-                       <p>{currentUser.username}</p>
+                       <Link to={`/users/${currentUser.id}`}>
+                            <p>{currentUser.username}</p>
+                       </Link>
                        <div className="actual-comment">
                            {comment.body}
                        </div>
                    </div>
                    <div className="time-comment-posted">1 Year Ago</div>
                </div> 
+            );
+        });
+
+        let otherSongs = [];
+
+        for(let i = 0; i < 3; i++){
+            let randSong = songs[Math.floor(Math.random() * songs.length)];
+            otherSongs.push(randSong) 
+        }
+
+        let allSongs = otherSongs.map((song, i) => {
+            return (
+                <div className="songs-holder">
+                    <Link key={i} to={`/songs/${song.id}`}>
+                        <img src={song.photoUrl} alt="" className="other-songs-img"/>
+                    </Link>
+                    <div className="other-songs-info">
+                        {/* <h2 className="other-songs-artist">{song.username}</h2> */}
+                        <Link key={i} to={`/songs/${song.id}`}>
+                            <h2 className="other-song-name">{song.title}</h2>
+                        </Link>
+                    </div>
+                </div>
             );
         });
 
@@ -85,7 +116,9 @@ class Songs extends React.Component {
                                 <button className="song-show-play"></button>
                                 <div className="header-show-info">
                                     <p>2 weeks</p>
-                                    <h3>{artist.username}</h3>
+                                    <Link to={`/users/${artist.id}`}>
+                                        <h3>{artist.username}</h3>
+                                    </Link>
                                     <h2>{this.props.song.title}</h2>   
                                 </div>
                             </div>
@@ -113,8 +146,12 @@ class Songs extends React.Component {
                                 </div>
                                 <div className="about-show">
                                     <div className="about-left">
-                                        <img className="image-icon" src={artist.photoUrl}></img>
-                                        <h2>{artist.username}</h2>
+                                        <Link to={`/users/${artist.id}`}>
+                                            <img className="image-icon" src={artist.photoUrl}></img>
+                                        </Link>
+                                        <Link to={`/users/${artist.id}`}>
+                                            <h2>{artist.username}</h2>
+                                        </Link>
                                         <p></p>
                                         <button>Follow</button>
                                     </div>
@@ -132,6 +169,13 @@ class Songs extends React.Component {
                             </div>
                             <div className="right-song-info">
                                 <div className="song-show-banner"></div>
+                                <div className="other-songs-container">
+                                    <div className="related-tracks">
+                                        <h1>Related Tracks</h1>
+                                        <p>View all</p>
+                                    </div>
+                                    {allSongs}
+                                </div>
                             </div>
                     </div>
                 </div>
