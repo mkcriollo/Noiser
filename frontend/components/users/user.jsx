@@ -1,54 +1,46 @@
 require('wavesurfer.js');
 
-import React, { useRef, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar_container'
-import WaveSurfer from "wavesurfer.js";
-
 
 class User extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            moreusers: []
+        }
     }
 
     componentDidMount(){
         this.props.fetchUser(this.props.match.params.userId)
         this.props.fetchUsers();
         this.props.receiveArtistSongs(this.props.match.params.userId)
+
+        this.randomThree();
     }
 
-    // Chat(){
-    //     const waveformRef = useRef();
+    randomThree(){
+        let {users} = this.props
+        let otherUsers = [];
 
-    //     useEffect(() => {
-    //         if(waveformRef.current) {
-    //         const wavesurfer = WaveSurfer.create({
-    //             container: waveformRef.current,
-    //         });
-    //         wavesurfer.load(this.props.songUrl)
-    //         }
-    //     }, [])};
-    
+        while(otherUsers.length < 3){
+            let randUser = users[Math.floor(Math.random() * users.length)];
+            if(!otherUsers.includes(randUser)){
+                otherUsers.push(randUser) 
+            }
+        }
+        this.setState({moreusers: otherUsers})
+    }
 
     render() { 
         if(!this.props.user) {
             return null;
         }
-        let { userSongs } = this.props
-        let { user } = this.props
-        let { users } = this.props
 
-        let threeRandomArtist = [];
-
-        
-        for (let index = 0; index < 3; index++) {
-            var randUser = users[Math.floor(Math.random() * users.length)];
-            threeRandomArtist.push(randUser)  
-        }
-        
+        let { userSongs, user} = this.props    
                
-        const allUsers = threeRandomArtist.map((user, i) => {
+        const allUsers = this.state.moreusers.map((user, i) => {
             return(
                 <div className="other-users-container">
                     <Link key={i} to={`/users/${user.id}`}>
@@ -73,8 +65,8 @@ class User extends React.Component {
                         </div>
                     </div>
                 </div>
-            )
-        })
+            );
+        });
 
         
 

@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.currentUser) {
         const preloadedState = {
             entities: {
-                users: { [window.currentUser.id]: window.currentUser },
+                user: { [window.currentUser.id]: window.currentUser },
+                users: users,
                 songs: songs
             },
             session: { id: window.currentUser.id }
@@ -33,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     //testing 
-    window.store = store
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+    // window.store = store
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
     //testing
     ReactDOM.render(<Root store={store} />, root)
 })

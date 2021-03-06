@@ -5,6 +5,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@welldone-software/why-did-you-render": "^6.1.0",
     "babel-loader": "^8.2.2",
     "lodash": "^4.17.20",
     "react": "^17.0.1",

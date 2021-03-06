@@ -1,32 +1,30 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import { Link } from 'react-router-dom';
 import Musicplayer from "../musicplayer/music_player_container";
 import Navbar from "../navbar/navbar_container";
 
 
-class Songs extends React.Component {
+class Songs extends PureComponent {
     constructor(props) {
         super(props);
         this.state = { 
             comment: "",
-            comments: [],
+            comments: null,
             moresongs: [],
             canDelete: false
          }
-        
-
         // this.update = this.update.bind(this);
         this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
     }
 
     componentDidMount(){
-        this.props.getSong(this.props.match.params.songId)
-        this.props.fetchSongComments(this.props.match.params.songId)
-        this.setState({comments: this.props.comments})
         this.props.fetchUsers()
         this.props.getAllSongs()
+        this.props.getSong(this.props.match.params.songId)
+        this.props.fetchSongComments(this.props.match.params.songId)
 
         this.randomThree();
+        this.reverseArr();
     }
     
     update(field){
@@ -50,12 +48,16 @@ class Songs extends React.Component {
 
 
 
-    reverseArr(arr){
+    reverseArr(){
+        let { comments } = this.props
+
         let str = []
-        for (let i = arr.length - 1; i > 0; i--) {
-            str.push(arr[i])
+        for (let i = comments.length - 1; i > 0; i--) {
+            str.push(comments[i])
         }
-        return str
+        
+        this.setState({comments: str})
+        debugger
     }
 
     randomThree(){
@@ -94,13 +96,10 @@ class Songs extends React.Component {
             return null;
         }
 
-  
         let { comments, currentUser, artist, users } = this.props;
         
-        
-        let allComments = this.reverseArr(comments)
 
-        let allSongComments = comments.map((comment, i) => {
+        let allSongComments = Object.values(comments).reverse().map((comment, i) => {
             return (
                <div className="song-comment-holder">
                    <Link to={`/users/${comment.author_id}`}>
@@ -121,7 +120,6 @@ class Songs extends React.Component {
             );
         });
 
-        // let otherSongsList = this.randomThree(songs)
 
         let allSongs = this.state.moresongs.map((song, i) => {
             return (
@@ -156,9 +154,6 @@ class Songs extends React.Component {
                                 </div>
                             </div>
                             <div className="waveform-show">
-                                {/* <div id="waveform">
-
-                                </div> */}
                             </div>
                         </div>
                         <img className="song-show-pic" src={this.props.song.photoUrl} ></img>
@@ -193,7 +188,7 @@ class Songs extends React.Component {
                                         <div className="show-comments">
                                             <p className="total-comments">
                                                 <span className="comment-icon"></span>
-                                                <span id="comment-icon-words">{comments.length} comments</span>
+                                                <span id="comment-icon-words">{Object.values(comments).length} comments</span>
                                             </p>
                                             {allSongComments}
                                         </div>
@@ -212,7 +207,6 @@ class Songs extends React.Component {
                             </div>
                     </div>
                 </div>
-                {/* <Musicplayer song={this.props.song.songUrl} photo={this.props.song.photoUrl} title={this.props.song.title}/> */}
             </div>
          );
     }

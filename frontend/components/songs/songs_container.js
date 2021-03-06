@@ -16,7 +16,7 @@ export const mSTP = (state,ownProps) => {
         // childComments: Object.values(state.entities.comments),
         users: Object.values(state.entities.users),
         user: state.entities.users[ownProps.match.params.userId],
-        comments: Object.values(state.entities.comments),
+        comments: state.entities.comments,
         songs: Object.values(state.entities.songs),
         artist: artist,
         currentUser: state.entities.users[state.session.id],
@@ -27,16 +27,15 @@ export const mSTP = (state,ownProps) => {
 export const mDTP = dispatch => {
     debugger
     return {
-        fetchUserComments: userId => dispatch(fetchUserComments(userId)),
         createSong: song => dispatch(createNewSong(song)),
         deleteSong: songId => dispatch(deleteCurrentSong(songId)),
-        getSong: songId => dispatch(receiveCurrentSong(songId)),
-        getAllSongs: () => dispatch(receiveAllSongs()),
-        receiveOneSong: songId => dispatch(receiveOneSong(songId)),
         createComment: comment => dispatch(createComment(comment)),
         deleteComment: commentId => dispatch(deleteComment(commentId)),
+        getSong: songId => dispatch(receiveCurrentSong(songId)),
+        getAllSongs: () => dispatch(receiveAllSongs()),
+        fetchUsers: () => dispatch(fetchUsers()),
+        receiveOneSong: songId => dispatch(receiveOneSong(songId)),
         fetchSongComments: songId => dispatch(fetchSongComments(songId)),
-        fetchUsers: () => dispatch(fetchUsers())
     }
 }
 
