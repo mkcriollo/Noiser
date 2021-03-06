@@ -13,7 +13,7 @@ export const mSTP = (state,ownProps) => {
 
     return {
         // userComments: userComments,
-        childComments: Object.values(state.entities.comments),
+        // childComments: Object.values(state.entities.comments),
         users: Object.values(state.entities.users),
         user: state.entities.users[ownProps.match.params.userId],
         comments: Object.values(state.entities.comments),

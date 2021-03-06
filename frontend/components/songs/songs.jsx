@@ -22,7 +22,7 @@ class Songs extends React.Component {
     componentDidMount(){
         this.props.getSong(this.props.match.params.songId)
         this.props.fetchSongComments(this.props.match.params.songId)
-        this.setState({comments: this.props.comments}),
+        this.setState({comments: this.props.comments})
         this.props.fetchUsers()
         this.props.getAllSongs()
 
@@ -71,9 +71,16 @@ class Songs extends React.Component {
         
         this.setState({moresongs: otherSongs})
     }
+
+    componentDidUpdate(prevProps,prevState){
+        if(prevProps.match.url !== this.props.match.url){
+            this.props.fetchSongComments(this.props.match.params.songId)
+        }
+    }
     
 
     render() { 
+        debugger
         if(!this.props.song) {
             return null;
         } 
@@ -86,13 +93,14 @@ class Songs extends React.Component {
         if(!this.props.songs){
             return null;
         }
+
   
         let { comments, currentUser, artist, users } = this.props;
         
         
         let allComments = this.reverseArr(comments)
-        let allSongComments = allComments.map((comment, i) => {
-            debugger
+
+        let allSongComments = comments.map((comment, i) => {
             return (
                <div className="song-comment-holder">
                    <Link to={`/users/${comment.author_id}`}>
