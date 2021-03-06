@@ -13,4 +13,15 @@ class Comment < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Comment,
         dependent: :destroy
+
+    has_many :child_comments,
+        class_name: :Comment,
+        foreign_key: :parent_comment_id,
+        primary_key: :id
+
+    belongs_to :parent_comment,
+        class_name: :Comment,
+        foreign_key: :parent_comment_id,
+        primary_key: :id,
+        optional: true
 end

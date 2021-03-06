@@ -8,6 +8,11 @@ class Api::CommentsController < ApplicationController
         render :index        
     end
 
+    def show
+        @comment = Comment.find(params[:id])
+        @new_comment = @comment.child_comments.new
+    end
+
     def create
         @comment = Comment.new(comment_params)
         
@@ -32,3 +37,4 @@ class Api::CommentsController < ApplicationController
         params.require(:comment).permit(:author_id, :song_id, :body)
     end
 end
+

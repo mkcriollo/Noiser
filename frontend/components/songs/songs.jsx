@@ -8,89 +8,114 @@ class Songs extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            comment: ""
+            comment: "",
+            comments: [],
+            moresongs: [],
+            canDelete: false
          }
-        debugger
+        
 
         // this.update = this.update.bind(this);
         this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
     }
 
     componentDidMount(){
-        this.props.getSong(this.props.match.params.songId);
-        this.props.fetchSongComments(this.props.match.params.songId);
-        this.props.fetchUsers();
-        this.props.getAllSongs();
-    }
+        this.props.getSong(this.props.match.params.songId)
+        this.props.fetchSongComments(this.props.match.params.songId)
+        this.setState({comments: this.props.comments}),
+        this.props.fetchUsers()
+        this.props.getAllSongs()
 
+        this.randomThree();
+    }
+    
     update(field){
         return e => this.setState({[field]: e.target.value})
     }
 
     handleCommentSubmit(e){
         e.preventDefault();
-        debugger
+        
         const comment = {
             author_id: this.props.currentUser.id,
             song_id: this.props.song.id,
             body: this.state.comment
         };
-        debugger
+        
 
         this.setState({comment: ""})
-        debugger
+        
         this.props.createComment(comment);
     }
 
+
+
+    reverseArr(arr){
+        let str = []
+        for (let i = arr.length - 1; i > 0; i--) {
+            str.push(arr[i])
+        }
+        return str
+    }
+
+    randomThree(){
+        let {songs} = this.props
+        let otherSongs = [];
+
+        while(otherSongs.length < 3){
+            let randSong = songs[Math.floor(Math.random() * songs.length)];
+            if(!otherSongs.includes(randSong)){
+                otherSongs.push(randSong) 
+            }
+        }
+        
+        this.setState({moresongs: otherSongs})
+    }
+    
+
     render() { 
-        debugger
         if(!this.props.song) {
             return null;
-        }
-
+        } 
         if(!this.props.artist){
             return null;
-        }
-
+        } 
         if(!this.props.comments){
             return null;
-        }
-
+        } 
         if(!this.props.songs){
             return null;
         }
   
-        let { comments, songs, currentUser, artist } = this.props;
-
-        let currentComments = comments.reverse()
-
-        let allSongComments = currentComments.map((comment, i) => {
+        let { comments, currentUser, artist, users } = this.props;
+        
+        
+        let allComments = this.reverseArr(comments)
+        let allSongComments = allComments.map((comment, i) => {
+            debugger
             return (
                <div className="song-comment-holder">
-                   <Link to={`/users/${currentUser.id}`}>
-                        <img src={currentUser.photoUrl} alt="" className="comment-user-pic"/>
+                   <Link to={`/users/${comment.author_id}`}>
+                        <img src={comment.author.photoUrl} alt="" className="comment-user-pic"/>
                    </Link>
                    <div className="comment-info-body">
                        <Link to={`/users/${currentUser.id}`}>
-                            <p>{currentUser.username}</p>
+                            <p>{comment.author.username}</p>
                        </Link>
                        <div className="actual-comment">
                            {comment.body}
                        </div>
                    </div>
-                   <div className="time-comment-posted">1 Year Ago</div>
+                   <div className="time-comment-posted">1 Year Ago
+                   <button className={currentUser.id === comment.author_id ? "delete-comment" : "no-comment"} onClick={() => this.props.deleteComment(comment.id)}></button>
+                   </div>
                </div> 
             );
         });
 
-        let otherSongs = [];
+        // let otherSongsList = this.randomThree(songs)
 
-        for(let i = 0; i < 3; i++){
-            let randSong = songs[Math.floor(Math.random() * songs.length)];
-            otherSongs.push(randSong) 
-        }
-
-        let allSongs = otherSongs.map((song, i) => {
+        let allSongs = this.state.moresongs.map((song, i) => {
             return (
                 <div className="songs-holder">
                     <Link key={i} to={`/songs/${song.id}`}>

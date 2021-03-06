@@ -46,6 +46,7 @@ export const createComment = comment => dispatch => {
 };
 
 export const deleteComment = commentId => dispatch => {
+    debugger
     return CommentApiUtil.deleteComment(commentId)
     .then(() => dispatch(removeComment(commentId)));
 };

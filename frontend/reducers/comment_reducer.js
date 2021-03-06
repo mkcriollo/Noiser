@@ -14,6 +14,7 @@ import {
         case RECEIVE_COMMENT:
             return Object.assign({}, state, {[action.comment.id]: action.comment})
         case REMOVE_COMMENT:
+            debugger
             let newState = Object.assign({},state);
             delete newState[action.commentId];
             return newState;

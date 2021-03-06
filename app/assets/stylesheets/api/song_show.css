@@ -73,7 +73,7 @@ table {
     margin: 0 auto;
     padding: 20px;
     background: linear-gradient(135deg,rgb(141, 132, 119) 0%, rgb(61, 61, 67) 100%);
-    margin-top: 28px;
+    margin-top: 18px;
     /* display: flex;
     justify-content: center; */
 }
@@ -172,7 +172,6 @@ table {
 .song-show-body {
     width: 1240px; 
     height: 100%;
-    height: 100vh;
     margin: 0 auto;
     background-color: #fff;
     display: flex;
@@ -181,10 +180,10 @@ table {
 
 .song-info{
     width: 880px;
-    height: 350px;
     background-color: #fff;
     margin-top: 20px;
     float: left;
+    padding-bottom: 30px;
 }
 
 .song-show-banner{
@@ -246,7 +245,6 @@ table {
 
 .about-show {
     width: 849px;
-    height: 212px;
     background-color: #fff;
     margin: auto;
     margin-top: 10px;
@@ -262,7 +260,6 @@ table {
 
 .about-right {
     width: 670px;
-    height: 191px;
     background-color: #fff;
     float: right;
     margin: 10px 15px 0px 0px
@@ -380,6 +377,7 @@ table {
 .right-song-info {
     border-left: 1px solid #f2f2f2;
     margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .other-song-name {
@@ -392,9 +390,6 @@ table {
 
 /* comments */
 
-.show-comments {
-}
-
 .song-comment-holder {
     width: 650px;
     height: 40px;
@@ -403,6 +398,14 @@ table {
     margin-top: 15px;
     display: flex;
     justify-content: left;
+}
+
+.song-comment-holder .delete-comment{
+    visibility: hidden;
+}
+
+.song-comment-holder:hover .delete-comment{
+    visibility: visible;
 }
 
 .comment-user-pic {
@@ -437,6 +440,34 @@ table {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 12px;
     margin-left: 15px;
+}
+
+.delete-comment{
+    background-image: url(https://a-v2.sndcdn.com/assets/images/delete-0d5a9176.svg);
+    background-size: 16px 16px;
+    width: 20px;
+    height: 20px;
+    min-width: 25px;
+    border: 1px solid #e5e5e5;
+    font-size: 11px;
+    padding: 2px 9px 2px 8px;
+    line-height: 16px;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 60%;
+    margin-top: 8%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    box-sizing: border-box;
+}
+
+.delete-comment:hover {
+    border: 1px solid #ccc;
+}
+
+.no-comment {
+    display: none;
 }
 
 .actual-comment {
