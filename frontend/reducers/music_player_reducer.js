@@ -13,6 +13,7 @@ const musicPlayerReducer = (state = defaultStatus,action) => {
 
     switch(action.type){
         case RECEIVE_CURRENT_SONG:
+            debugger
             newState.currentSongId = action.songId
             return newState;
         case RECEIVE_NEXT_SONG: 

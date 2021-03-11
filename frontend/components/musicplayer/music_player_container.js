@@ -10,6 +10,7 @@ const mSTP = (state, ownProps) => {
     if (currentSong) {
         artist = state.entities.users[currentSong.artist_id];
     }
+    debugger
     return {
         songs: state.entities.songs,
         currentSong: currentSong,

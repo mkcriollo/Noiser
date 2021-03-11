@@ -1,10 +1,11 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Musicplayer from "../musicplayer/music_player_container";
+import PlayButton from '../musicplayer/playbutton_container';
 import Navbar from "../navbar/navbar_container";
 
 
-class Songs extends PureComponent {
+class Songs extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -77,6 +78,7 @@ class Songs extends PureComponent {
     componentDidUpdate(prevProps,prevState){
         if(prevProps.match.url !== this.props.match.url){
             this.props.fetchSongComments(this.props.match.params.songId)
+            this.randomThree();
         }
     }
     
@@ -96,7 +98,7 @@ class Songs extends PureComponent {
             return null;
         }
 
-        let { comments, currentUser, artist, users } = this.props;
+        let { comments, currentUser, artist, users, song } = this.props;
         
 
         let allSongComments = Object.values(comments).reverse().map((comment, i) => {
@@ -114,7 +116,10 @@ class Songs extends PureComponent {
                        </div>
                    </div>
                    <div className="time-comment-posted">1 Year Ago
-                   <button className={currentUser.id === comment.author_id ? "delete-comment" : "no-comment"} onClick={() => this.props.deleteComment(comment.id)}></button>
+                   <div className="comment-action-holder">
+                        <button className="child-comment-button"></button>
+                        <button className={currentUser.id === comment.author_id ? "delete-comment" : "no-comment"} onClick={() => this.props.deleteComment(comment.id)}></button>
+                   </div>
                    </div>
                </div> 
             );
@@ -144,7 +149,8 @@ class Songs extends PureComponent {
                     <div className="main-song-show">
                         <div className="song-show-player">
                             <div className="song-show-title">
-                                <button className="song-show-play"></button>
+                                {/* <button className="song-show-play"></button> */}
+                                <PlayButton songId={song.songId} song={song} />
                                 <div className="header-show-info">
                                     <p>2 weeks</p>
                                     <Link to={`/users/${artist.id}`}>

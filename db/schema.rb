@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_015647) do
+ActiveRecord::Schema.define(version: 2021_03_06_223050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,26 @@ ActiveRecord::Schema.define(version: 2021_03_06_015647) do
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["parent_comment_id"], name: "index_comments_on_parent_comment_id"
     t.index ["song_id"], name: "index_comments_on_song_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "follower_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+    t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "likeable_type"
+    t.bigint "likeable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likeable_id"], name: "index_likes_on_likeable_id"
+    t.index ["likeable_type"], name: "index_likes_on_likeable_type"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "songs", force: :cascade do |t|

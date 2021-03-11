@@ -1,5 +1,4 @@
 import React from 'react';
-import GreetingContainer from "../greeting/greeting_container";
 import { Link } from "react-router-dom"
 
 class NavBar extends React.Component {
@@ -11,6 +10,9 @@ class NavBar extends React.Component {
         
     }
     render() { 
+        // if(!this.props.currentUser){
+        //     return null
+        // }
         
         return ( 
             <div>
