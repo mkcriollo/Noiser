@@ -29,7 +29,7 @@ const removeComment = commentId => {
 // thunk actions
 
 export const fetchSongComments = songId => dispatch => {
-    debugger
+    
     return CommentApiUtil.fetchSongsComments(songId)
     .then(comments => dispatch(receiveComments(comments)));
 };
@@ -40,13 +40,13 @@ export const fetchUserComments = userId => dispatch => {
 };
 
 export const createComment = comment => dispatch => {
-    debugger
+    
     return CommentApiUtil.createComment(comment)
     .then(comment => dispatch(receiveComment(comment)));
 };
 
 export const deleteComment = commentId => dispatch => {
-    debugger
+    
     return CommentApiUtil.deleteComment(commentId)
     .then(() => dispatch(removeComment(commentId)));
 };

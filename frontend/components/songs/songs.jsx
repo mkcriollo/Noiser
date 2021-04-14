@@ -58,7 +58,7 @@ class Songs extends React.Component {
         }
         
         this.setState({comments: str})
-        debugger
+        
     }
 
     randomThree(){
@@ -84,7 +84,7 @@ class Songs extends React.Component {
     
 
     render() { 
-        debugger
+        
         if(!this.props.song) {
             return null;
         } 

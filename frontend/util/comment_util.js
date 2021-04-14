@@ -12,7 +12,7 @@ export const fetchUserComments = userId => {
     });
 };
 export const createComment = comment => {
-    debugger
+    
     return $.ajax({
         method: "POST",
         url: "/api/comments",
@@ -22,7 +22,7 @@ export const createComment = comment => {
     });
 };
 export const deleteComment = commentId => {
-    debugger
+    
     return $.ajax({
         method: "DELETE",
         url: `/api/comments/${commentId}`

@@ -8,12 +8,13 @@ const defaultStatus = {
 }
 
 const musicPlayerReducer = (state = defaultStatus,action) => {
+  
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
     switch(action.type){
         case RECEIVE_CURRENT_SONG:
-            debugger
+            
             newState.currentSongId = action.songId
             return newState;
         case RECEIVE_NEXT_SONG: 
@@ -23,6 +24,7 @@ const musicPlayerReducer = (state = defaultStatus,action) => {
             if(!newState.played.includes(action.songId)){
                 newState.played.push(action.songId);
             }
+           
             return newState;
         case PLAY_SONG:
             newState.playing = true;
@@ -41,7 +43,7 @@ const musicPlayerReducer = (state = defaultStatus,action) => {
             allSongs.forEach(song => {
                 newState.queue.push(song.id);
             })
-
+            
             return newState;
         default:
             return state;

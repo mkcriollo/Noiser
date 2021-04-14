@@ -11,6 +11,7 @@ const mSTP = (state,ownProps) => {
 }
 
 const mDTP = dispatch => {
+  
     return {
       getAllSongs: () => dispatch(receiveAllSongs())
     }

@@ -6,7 +6,7 @@ export const PAUSE_SONG = "PAUSE_SONG";
 export const RECEIVE_QUEUE = "RECEIVE_QUEUE";
 
 export const receiveCurrentSong = songId => {
-    debugger
+    
     return {
         type: RECEIVE_CURRENT_SONG,
         songId

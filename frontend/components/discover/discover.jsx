@@ -7,13 +7,16 @@ import Musicplayer from '../musicplayer/music_player_container';
 class Discover extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            songs: []
+         }
         
         // this.playMusicBar = this.playMusicBar.bind(this)
     }
 
     componentDidMount(){
-        this.props.getAllSongs()
+        this.props.getAllSongs();
+        
     }
 
     // playMusicBar(e){

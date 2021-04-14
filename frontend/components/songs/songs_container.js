@@ -10,7 +10,7 @@ export const mSTP = (state,ownProps) => {
     let artist = state.entities.users[song.artist_id];
     // const userComments = Object.values(state.entities.comments)
     // .filter(comment => comment.author_id === parseInt(ownProps.match.params.userId)).reverse();
-
+    
     return {
         // userComments: userComments,
         // childComments: Object.values(state.entities.comments),
@@ -25,7 +25,7 @@ export const mSTP = (state,ownProps) => {
 }
 
 export const mDTP = dispatch => {
-    debugger
+    
     return {
         createSong: song => dispatch(createNewSong(song)),
         deleteSong: songId => dispatch(deleteCurrentSong(songId)),

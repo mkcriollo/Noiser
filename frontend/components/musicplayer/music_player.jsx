@@ -12,16 +12,22 @@ class MusicPlayer extends React.Component {
             volumeHover: false,
          }
 
+        this.handlePlayAgain = this.handlePlayAgain.bind(this)
         this.handleMetadata = this.handleMetadata.bind(this)
         this.handlePlay = this.handlePlay.bind(this)
         this.handleRewind = this.handleRewind.bind(this);
-        this.handleSkipAhead = this.handleSkipAhead.bind(this);
+        this.handleSkipAhead = this.handleSkip.bind(this);
         this.handleTimeElapsed = this.handleTimeElapsed.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handleSkipBack = this.handleSkipBack.bind(this);
         this.handleVolume = this.handleVolume.bind(this);
         this.handleMute = this.handleMute.bind(this);
         this.handleSetup = this.handleSetup.bind(this);
+        
+    }
+
+    componentDidMount(){
+        this.props.receiveQueue(this.props.songs);
         debugger
     }
 
@@ -54,11 +60,18 @@ class MusicPlayer extends React.Component {
         this.props.receiveCurrentSong(this.props.queue.shift());
         this.props.playSong();
         this.setState({ timeElapsed: 0 });
+        debugger
+    }
+
+    handlePlayAgain(){
+        const musicPlayer = document.getElementById("audio");
+
+        musicPlayer.currentTime = 0
     }
 
     handleSkipBack() {
         const musicPlayer = document.getElementById("audio");
-
+        debugger
         this.props.receivePreviousSong(this.props.currentSong.id);
         this.props.receiveCurrentSong(this.props.queue.shift());
         musicPlayer.currentTime = 0;
@@ -66,7 +79,7 @@ class MusicPlayer extends React.Component {
         this.setState({ timeElapsed: 0 });
     }
 
-    handleSkipAhead(e) {
+    handleSkip(e) {
         const musicPlayer = document.getElementById("audio");
 
         musicPlayer.currentTime = e.target.value;
@@ -122,21 +135,21 @@ class MusicPlayer extends React.Component {
     }
 
     render() { 
-        debugger
+        
         if(!this.props.currentSong){
             return null;
         }
-        debugger
+        
         const { currentSong, artist, playing } = this.props;
 
         const musicPlayerOn = currentSong ?
                 <div className="music-player-container">
                     <div className="inner-music-player-holder">
-                        <button className="mp-prev" onClick={this.handleSkipBack}></button>
-                        <button className="mp-play" onClick={this.handlePlay}></button>
+                        <button className="mp-prev" onClick={this.handleRewind}></button>
+                        <button className={!this.props.playing ? "mp-play" : "mp-pause"} onClick={this.handlePlay}></button>
                         <button className="mp-next" onClick={this.handleNext}></button>
                         <button className="mp-shuffle"></button>
-                        <button className="mp-repeat" onClick={this.handleRewind}></button>
+                        <button className="mp-repeat" onClick={this.handlePlayAgain}></button>
 
                         <div className="music-player-song-bar">
                             <div className="current-song-current-time">{formatTime(this.state.timeElapsed)}</div>
@@ -159,7 +172,7 @@ class MusicPlayer extends React.Component {
                 </div> 
             : null;
 
-    
+ 
         return (
             <>
             <audio 
