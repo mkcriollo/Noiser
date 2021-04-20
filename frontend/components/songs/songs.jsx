@@ -16,6 +16,7 @@ class Songs extends React.Component {
          }
         // this.update = this.update.bind(this);
         this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
+        
     }
 
     componentDidMount(){
@@ -26,6 +27,7 @@ class Songs extends React.Component {
 
         this.randomThree();
         this.reverseArr();
+        
     }
     
     update(field){

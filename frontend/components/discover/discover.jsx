@@ -8,15 +8,32 @@ class Discover extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            songs: []
+            songs: [],
+            moreusers: []
          }
         
         // this.playMusicBar = this.playMusicBar.bind(this)
+        
     }
 
     componentDidMount(){
         this.props.getAllSongs();
+        this.props.fetchUsers();
+        this.randomThree();
         
+    }
+
+    randomThree(){
+        let {users} = this.props
+        let otherUsers = [];
+
+        while(otherUsers.length < 3){
+            let randUser = users[Math.floor(Math.random() * users.length)];
+            if(!otherUsers.includes(randUser)){
+                otherUsers.push(randUser) 
+            }
+        }
+        this.setState({moreusers: otherUsers})
     }
 
     // playMusicBar(e){
@@ -187,6 +204,18 @@ class Discover extends React.Component {
             );
         });
 
+        const allUsers = this.state.moreusers.map((user, i) => {
+            return (
+                <div className="discover-user-holder">
+                    <img src={user.photoUrl} alt=""/>
+                    <div className="dis-holder-info">
+                        <h3>{user.name}</h3>
+                        <div className="dis-user-stats"></div>
+                    </div>
+                </div>
+            )
+        });
+        
         return ( 
             <div className="app-discover">
                 <NavBar />
@@ -286,19 +315,32 @@ class Discover extends React.Component {
                             </div>
                         </div>
                         <div className="side-content">
-                            <div className="dash-box"></div>
-                            <div className="side-footer">
-                                <br/>
-                                <li>Legal -</li>
-                                <li>Privacy -</li>
-                                <li>Cookies -</li>
-                                <li>Imprint -</li>
-                                <li>Creator Resources -</li>
-                                <li>Blog -</li>
-                                <li>Charts -</li>
-                                <li>Popular searches</li>
-                                <br/>
-                                <a>Language:<p className="side-footer-p">English (US)</p></a>
+                            <div className="side-inside-info">
+                                <div className="dash-box"></div>
+                                <div className="who-to-follow-header">
+                                    <div className="who-to-follow-header-logo-words">
+                                        <span class="sc-icon sc-icon-follower sc-icon-large sidebarHeader__icon"></span>
+                                        <p>Who to follow</p>
+                                    </div>
+                                    <div className="users-refresh-discover">
+                                        <span></span>
+                                        <p>Refresh list</p>
+                                    </div>
+                                </div>
+                                {allUsers}
+                                <div className="side-footer">
+                                    <br/>
+                                    <li>Legal -</li>
+                                    <li>Privacy -</li>
+                                    <li>Cookies -</li>
+                                    <li>Imprint -</li>
+                                    <li>Creator Resources -</li>
+                                    <li>Blog -</li>
+                                    <li>Charts -</li>
+                                    <li>Popular searches</li>
+                                    <br/>
+                                    <a>Language:<p className="side-footer-p">English (US)</p></a>
+                                </div>
                             </div>
                         </div>
                     </div>

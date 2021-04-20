@@ -11,9 +11,10 @@ class PlayButton extends React.Component {
     componentDidMount(){
       this.props.receiveCurrentSong(this.props.song.id);
       this.props.receivePreviousSong(this.props.song.id);
+      
+      
     }
     
-
     handlePlay() {
     let {song} = this.props 
 
@@ -22,10 +23,10 @@ class PlayButton extends React.Component {
      
     
     if (this.props.playing && this.props.currentSong.id === this.props.song.id) {
-        
+      
       this.props.pauseSong();
       musicPlayer.pause();
-
+      
     } else {
       
       this.props.receiveCurrentSong(this.props.song.id);

@@ -24,11 +24,12 @@ class MusicPlayer extends React.Component {
         this.handleMute = this.handleMute.bind(this);
         this.handleSetup = this.handleSetup.bind(this);
         
+        
     }
 
     componentDidMount(){
         this.props.receiveQueue(this.props.songs);
-        debugger
+        
     }
 
     handleSetup(){
@@ -60,7 +61,7 @@ class MusicPlayer extends React.Component {
         this.props.receiveCurrentSong(this.props.queue.shift());
         this.props.playSong();
         this.setState({ timeElapsed: 0 });
-        debugger
+        
     }
 
     handlePlayAgain(){
@@ -71,7 +72,7 @@ class MusicPlayer extends React.Component {
 
     handleSkipBack() {
         const musicPlayer = document.getElementById("audio");
-        debugger
+        
         this.props.receivePreviousSong(this.props.currentSong.id);
         this.props.receiveCurrentSong(this.props.queue.shift());
         musicPlayer.currentTime = 0;

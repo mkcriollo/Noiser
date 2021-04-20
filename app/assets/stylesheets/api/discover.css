@@ -87,15 +87,16 @@ table {
 
 .main-content {
     background-color: #fff;
-    width: 880px;
+    width: 1240px;
 	height: 100%;
 	/* padding: 32px 30px 0px 0px; */
 	float: left;
 	border-right: 2px solid #f2f2f2;
+	display: flex;
 }
 
 .loading-song {
-	width: 819px;
+	/* width: 819px; */
 	height: 100%;
 	margin: 3%;
 }
@@ -106,7 +107,6 @@ table {
 	border-bottom: 2px solid #f2f2f2;;
 	margin-bottom: 34px;
 	background-color: #fff;
-	
 }
 
 
@@ -156,16 +156,19 @@ table {
 /*sidebar content */
 
 .side-content {
-	width: auto;
+	/* width: auto; */
     background-color: #fff;
 	height: 100%;
 	margin: auto;
-	position: fixed;
-	margin-left: 50%;
-	margin-left: 50%;
+	/* position: fixed; */
     margin-top: 2%;
 
 } 
+
+.side-inside-info {
+	position: sticky;
+	top: 6%;
+}
 
 .dash-box {
 	width: 300px;
@@ -176,6 +179,81 @@ table {
 	background: url(https://va.sndcdn.com/box/DashboxTestimonials_300x250_ObjectBlue.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+/* side content who to follow*/
+
+.who-to-follow-header {
+	width: 302px;
+	height: 30px;
+	/* background-color: red; */
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid #f2f2f2;
+	cursor: pointer;
+}
+
+.who-to-follow-header-logo-words {
+	display: flex;
+	justify-content: space-between;
+}
+
+.who-to-follow-header-logo-words > span {
+	width: 21px;
+    margin-right: 4px;
+	height: 20px;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+CiAgICA8cGF0aCBmaWxsPSJyZ2JhKDE1MywgMTUzLCAxNTMsIDAuNykiIGQ9Ik0xOC40IDE4LjVsMi41IDUgLjIuNWg2LjlsLTIuMS00LjMtNC4xLTEuNXYtMi41YzEuMi0xLjEgMS44LTMuMiAxLjgtNS4xIDAtMi4xLTItMy42LTMuNS0zLjZzLTMuNSAxLjYtMy41IDMuNmMwIDEuOS41IDQgMS44IDUuMXYyLjVoLS4xbC4xLjN6Ii8+CiAgICA8cGF0aCBmaWxsPSJyZ2IoMTUzLCAxNTMsIDE1MykiIGQ9Ik0xNy41IDE5bC01LTEuOHYtM2MxLjQtMS4yIDItMy44IDItNS45IDAtMi40LTIuMy00LjMtNC00LjMtMS43IDAtNCAxLjgtNCA0LjMgMCAyLjIuNiA0LjcgMiA1Ljl2M2wtNSAxLjgtMi41IDVoMTlsLTIuNS01eiIvPgo8L3N2Zz4K);
+    background-size: 20px 20px;
+}
+
+.who-to-follow-header-logo-words > p {
+	line-height: 24px;
+	font-weight: 100;
+    color: #999;
+	font-size: 14px;
+	font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.users-refresh-discover {
+	display: flex;
+	justify-content: space-between;
+}
+
+.users-refresh-discover:hover {
+	color: #333;
+}
+
+.users-refresh-discover > span {
+	background-image: url(https://a-v2.sndcdn.com/assets/images/refresh-de07f592.svg);
+    background-repeat: no-repeat;
+    background-position: 0;
+    padding-left: 20px;
+    background-size: 18px 18px;
+	margin-bottom: 5px;
+}
+
+.users-refresh-discover > p {
+	line-height: 24px;
+	font-weight: 100;
+    color: #999;
+	font-size: 14px;
+	font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.discover-user-holder {
+	display: flex;
+	justify-content: space-around;
+	background-color: red;
+}
+
+.discover-user-holder > img {
+	width: 20px;
+	height: 20px;
+}
+
+.dis-holder-info {
+	width: 280px;
 }
 
 .side-footer{
