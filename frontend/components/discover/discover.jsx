@@ -19,8 +19,7 @@ class Discover extends React.Component {
     componentDidMount(){
         this.props.getAllSongs();
         this.props.fetchUsers();
-        this.randomThree();
-        
+        // this.randomThree();  
     }
 
     randomThree(){
@@ -28,9 +27,9 @@ class Discover extends React.Component {
         let otherUsers = [];
 
         while(otherUsers.length < 3){
-            let randUser = users[Math.floor(Math.random() * users.length)];
+            let randUser = users[Math.trunc(Math.random() * users.length)];
             if(!otherUsers.includes(randUser)){
-                otherUsers.push(randUser) 
+                otherUsers.push(randUser);
             }
         }
         this.setState({moreusers: otherUsers})
@@ -204,17 +203,17 @@ class Discover extends React.Component {
             );
         });
 
-        const allUsers = this.state.moreusers.map((user, i) => {
-            return (
-                <div className="discover-user-holder">
-                    <img src={user.photoUrl} alt=""/>
-                    <div className="dis-holder-info">
-                        <h3>{user.name}</h3>
-                        <div className="dis-user-stats"></div>
-                    </div>
-                </div>
-            )
-        });
+        // const allUsers = this.state.moreusers.map((user, i) => {
+        //     return (
+        //         <div className="discover-user-holder">
+        //             <img src={user.photoUrl} alt=""/>
+        //             <div className="dis-holder-info">
+        //                 <h3>{user.name}</h3>
+        //                 <div className="dis-user-stats"></div>
+        //             </div>
+        //         </div>
+        //     )
+        // });
         
         return ( 
             <div className="app-discover">
@@ -327,7 +326,7 @@ class Discover extends React.Component {
                                         <p>Refresh list</p>
                                     </div>
                                 </div>
-                                {allUsers}
+                                {/* {allUsers} */}
                                 <div className="side-footer">
                                     <br/>
                                     <li>Legal -</li>

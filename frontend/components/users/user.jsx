@@ -1,5 +1,3 @@
-require('wavesurfer.js');
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar_container'
@@ -27,7 +25,7 @@ class User extends React.Component {
         while(otherUsers.length < 3){
             let randUser = users[Math.floor(Math.random() * users.length)];
             if(!otherUsers.includes(randUser)){
-                otherUsers.push(randUser) 
+                otherUsers.push(randUser);
             }
         }
         this.setState({moreusers: otherUsers})
