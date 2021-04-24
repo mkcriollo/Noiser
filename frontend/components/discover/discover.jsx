@@ -87,7 +87,40 @@ class Discover extends React.Component {
   //   }
 
   render() {
-    const { songs } = this.props;
+    const { songs, users } = this.props;
+
+    const playlistDiscover = songs.map((song) => {
+      debugger;
+      return (
+        <div className="playlist-song-holder">
+          <div className="playlist-song-left">
+            <h4>{song.description}</h4>
+            <span>-</span>
+            <p>{song.title}</p>
+          </div>
+          <div className="playlist-song-right">
+            <span></span>
+            <p>{Math.trunc(Math.random() * 7500)}</p>
+          </div>
+        </div>
+      );
+    });
+
+    const followMainDis = users.map((user, i) => {
+      return (
+        <div className="big-follower-main">
+          <img src={user.photoUrl} alt="" />
+          <div className="follow-dis-name-holder">
+            <h4>{user.username}</h4>
+            <span className="icon-vertified-small"></span>
+          </div>
+          <button className="follow-artist-dis">
+            <div className="icon-follow"></div>
+            Follow
+          </button>
+        </div>
+      );
+    });
 
     let randomSongs = this.randomArr(songs);
     let reversedSongs = this.reverseArr(songs);
@@ -300,6 +333,19 @@ class Discover extends React.Component {
                   <div className="inner-showing">{hotSongs}</div>
                 </div>
               </div>
+              <div className="playlist-main-holder">
+                <h2>The Upload</h2>
+                <p>Newly Posted Tracks.Just for you</p>
+                <div className="playlist-holder">
+                  <img
+                    src="https://i1.sndcdn.com/artworks-Jy09runYxIP4Joqn-9r6T6A-t200x200.jpg"
+                    alt=""
+                  />
+                  <div className="playlist-songs-container">
+                    {playlistDiscover}
+                  </div>
+                </div>
+              </div>
               <div className="mixed-selection">
                 <h2>New Music Now</h2>
                 <p>The lastest hits,updated all the time</p>
@@ -313,6 +359,11 @@ class Discover extends React.Component {
                 <div className="showing-songs">
                   <div className="inner-showing">{rapSongs}</div>
                 </div>
+              </div>
+              <div className="bigger-follow-container">
+                <h2>First on Noiser</h2>
+                <p>Artist to follow in 2021</p>
+                <div className="inner-bigger-follow">{followMainDis}</div>
               </div>
               <div className="mixed-selection">
                 <h2>Dancing on Your Own</h2>
