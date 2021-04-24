@@ -23,7 +23,7 @@ class Songs extends React.Component {
     this.props.getSong(this.props.match.params.songId);
     this.props.fetchSongComments(this.props.match.params.songId);
 
-    this.randomThree();
+    // this.randomThree();
     this.reverseArr();
   }
 
@@ -96,7 +96,6 @@ class Songs extends React.Component {
     let allSongComments = Object.values(comments)
       .reverse()
       .map((comment, i) => {
-        debugger;
         return (
           <div className="song-comment-holder">
             <Link to={`/users/${comment.author_id}`}>

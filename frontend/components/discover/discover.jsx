@@ -60,7 +60,7 @@ class Discover extends React.Component {
   }
 
   //   generatePlaylist(playlist) {
-  //     debugger;
+  //     ;
   //     let newPlaylist = playlist.map((song, i) => {
   //       return (
   //         <Link key={i} to={`/songs/${song.id}`}>
@@ -182,6 +182,7 @@ class Discover extends React.Component {
             <button id="song-show-play-dis"></button>
             {/* <PlayButton songId={song.songId} song={song} /> */}
             <div id="overlay-dis"></div>
+            <p className="dis-song-title">{song.title}</p>
           </div>
         </Link>
       );
@@ -254,8 +255,6 @@ class Discover extends React.Component {
     //         </div>
     //     )
     // });
-
-    debugger;
 
     return (
       <div className="app-discover">

@@ -7,7 +7,7 @@
 
 .music-player-container {
   width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   /* visibility: hidden; */
   width: 100%;
