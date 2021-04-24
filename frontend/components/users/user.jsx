@@ -24,6 +24,7 @@ class User extends React.Component {
     }
     if (prevProps.match.url !== this.props.match.url) {
       this.props.receiveArtistSongs(this.props.match.params.userId);
+      this.props.fetchUsers().then(this.randomThree());
     }
   }
 

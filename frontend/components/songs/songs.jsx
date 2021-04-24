@@ -19,12 +19,21 @@ class Songs extends React.Component {
 
   componentDidMount() {
     this.props.fetchUsers();
-    this.props.getAllSongs();
+    this.props.getAllSongs().then(this.randomThree());
     this.props.getSong(this.props.match.params.songId);
     this.props.fetchSongComments(this.props.match.params.songId);
 
-    // this.randomThree();
     this.reverseArr();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.moresongs.length === 0) {
+      this.props.getAllSongs().then(this.randomThree());
+    }
+    if (prevProps.match.url !== this.props.match.url) {
+      this.props.fetchSongComments(this.props.match.params.songId);
+      this.props.getAllSongs().then(this.randomThree());
+    }
   }
 
   update(field) {
@@ -60,20 +69,17 @@ class Songs extends React.Component {
     let { songs } = this.props;
     let otherSongs = [];
 
-    while (otherSongs.length < 3) {
-      let randSong = songs[Math.floor(Math.random() * songs.length)];
-      if (!otherSongs.includes(randSong)) {
-        otherSongs.push(randSong);
+    if (songs.length >= 3) {
+      while (otherSongs.length < 3) {
+        let randSong = songs[Math.floor(Math.random() * songs.length)];
+        if (!otherSongs.includes(randSong)) {
+          otherSongs.push(randSong);
+        }
       }
-    }
 
-    this.setState({ moresongs: otherSongs });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.url !== this.props.match.url) {
-      this.props.fetchSongComments(this.props.match.params.songId);
-      this.randomThree();
+      this.setState({ moresongs: otherSongs });
+    } else {
+      return null;
     }
   }
 
