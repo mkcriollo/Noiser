@@ -18,21 +18,37 @@ class Discover extends React.Component {
 
   componentDidMount() {
     this.props.getAllSongs();
-    this.props.fetchUsers();
-    // this.randomThree();
+    this.props.fetchUsers().then(this.randomThree());
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    debugger;
+    if (prevState.moreusers.length === 0) {
+      this.props.fetchUsers().then(this.randomThree());
+    }
+    if (prevProps.match.url !== this.props.match.url) {
+      this.props.fetchUsers().then(this.randomThree());
+    }
   }
 
   randomThree() {
     let { users } = this.props;
-    let otherUsers = [];
 
-    while (otherUsers.length < 3) {
-      let randUser = users[Math.trunc(Math.random() * users.length)];
-      if (!otherUsers.includes(randUser)) {
-        otherUsers.push(randUser);
+    if (users.length >= 3) {
+      let otherUsers = [];
+
+      while (otherUsers.length < 3) {
+        let randUser = users[Math.floor(Math.random() * users.length)];
+        console.log(randUser);
+        if (!otherUsers.includes(randUser)) {
+          otherUsers.push(randUser);
+        }
       }
+      console.log(otherUsers);
+      this.setState({ moreusers: otherUsers });
+    } else {
+      return null;
     }
-    this.setState({ moreusers: otherUsers });
   }
 
   // playMusicBar(e){
@@ -244,17 +260,31 @@ class Discover extends React.Component {
       );
     });
 
-    // const allUsers = this.state.moreusers.map((user, i) => {
-    //     return (
-    //         <div className="discover-user-holder">
-    //             <img src={user.photoUrl} alt=""/>
-    //             <div className="dis-holder-info">
-    //                 <h3>{user.name}</h3>
-    //                 <div className="dis-user-stats"></div>
-    //             </div>
-    //         </div>
-    //     )
-    // });
+    const allUsers = this.state.moreusers.map((user, i) => {
+      return (
+        <div className="other-users-container">
+          <Link key={i} to={`/users/${user.id}`}>
+            <img src={user.photoUrl} alt="" className="other-user-img" />
+          </Link>
+
+          <div className="other-user-info">
+            <div className="other-users-name">
+              <Link key={i} to={`/users/${user.id}`}>
+                <h1>{user.username}</h1>
+              </Link>
+              <div className="icon-vertified-small"></div>
+            </div>
+            <div className="other-user-followers">
+              <div className="following-count"></div>
+              <button>
+                <div className="icon-follow"></div>
+                Follow
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    });
 
     return (
       <div className="app-discover">
@@ -347,7 +377,7 @@ class Discover extends React.Component {
                     <p>Refresh list</p>
                   </div>
                 </div>
-                {/* {allUsers} */}
+                {allUsers}
                 <div className="side-footer">
                   <br />
                   <li>Legal -</li>

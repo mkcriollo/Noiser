@@ -28,10 +28,6 @@ class User extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    this.props.fetchUsers().then(this.randomThree());
-  }
-
   randomThree() {
     let { users } = this.props;
 

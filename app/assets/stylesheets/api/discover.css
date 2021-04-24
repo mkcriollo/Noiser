@@ -373,6 +373,10 @@ table {
     Garuda, Verdana, Tahoma, sans-serif;
 }
 
+.users-refresh-discover > p:hover {
+  color: #333;
+}
+
 .discover-user-holder {
   display: flex;
   justify-content: space-around;
