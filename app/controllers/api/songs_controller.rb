@@ -24,8 +24,8 @@ class Api::SongsController < ApplicationController
     end
 
     def destroy 
-        @song = current_user.id.songs.find(params[:id])
-
+        @song = current_user.songs.find(params[:id])
+        
         if @song
             @song.destroy
         end

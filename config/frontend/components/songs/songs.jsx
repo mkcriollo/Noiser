@@ -84,6 +84,7 @@ class Songs extends React.Component {
   }
 
   render() {
+    debugger;
     if (!this.props.song) {
       return null;
     }
@@ -164,7 +165,22 @@ class Songs extends React.Component {
                   <h2>{this.props.song.title}</h2>
                 </div>
               </div>
-              <div className="waveform-show"></div>
+              <div className="waveform-show">
+                <button
+                  className={
+                    song.artist_id === currentUser.id
+                      ? "delete-song-yes"
+                      : "delete-song-no"
+                  }
+                  onClick={() =>
+                    this.props
+                      .deleteSong(song.id)
+                      .then(this.props.history.push("/"))
+                  }
+                >
+                  Delete Song
+                </button>
+              </div>
             </div>
             <img className="song-show-pic" src={this.props.song.photoUrl}></img>
           </div>

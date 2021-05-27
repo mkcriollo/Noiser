@@ -22,7 +22,6 @@ class Discover extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    debugger;
     if (prevState.moreusers.length === 0) {
       this.props.fetchUsers().then(this.randomThree());
     }
@@ -90,7 +89,6 @@ class Discover extends React.Component {
     const { songs, users } = this.props;
 
     const playlistDiscover = songs.map((song) => {
-      debugger;
       return (
         <div className="playlist-song-holder">
           <div className="playlist-song-left">
@@ -229,7 +227,7 @@ class Discover extends React.Component {
           <div>
             <img src={song.photoUrl} />
             <button id="song-show-play-dis"></button>
-            {/* <PlayButton songId={song.songId} song={song} /> */}
+            {/* <PlayButton songId={song.id} song={song} /> */}
             <div id="overlay-dis"></div>
             <p className="dis-song-title">{song.title}</p>
           </div>
@@ -335,7 +333,7 @@ class Discover extends React.Component {
               </div>
               <div className="playlist-main-holder">
                 <h2>The Upload</h2>
-                <p>Newly Posted Tracks.Just for you</p>
+                <p>Newly Posted Tracks. Just for you</p>
                 <div className="playlist-holder">
                   <img
                     src="https://i1.sndcdn.com/artworks-Jy09runYxIP4Joqn-9r6T6A-t200x200.jpg"
@@ -346,7 +344,7 @@ class Discover extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="mixed-selection">
+              <div className="mixed-selection mixed-selection1">
                 <h2>New Music Now</h2>
                 <p>The lastest hits,updated all the time</p>
                 <div className="showing-songs">

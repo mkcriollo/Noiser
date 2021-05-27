@@ -8,16 +8,13 @@ class NavBar extends React.Component {
   }
 
   //   openModalFunc() {
-  //     debugger;
+  //     ;
   //     this.setState({ modelOpen: !this.state.modelOpen });
   //   }
   render() {
-    debugger;
     // if(!this.props.currentUser){
     //     return null
     // }
-    debugger;
-
     return (
       <div>
         <div className="navbar">

@@ -7,7 +7,26 @@ class User extends React.Component {
     super(props);
     this.state = {
       moreusers: [],
+      username: "",
+      open: false,
     };
+  }
+
+  openEdit() {
+    let editBtn = document.querySelector(".edit-profile-btn");
+    let editOption = document.querySelector(".edit-username-holder");
+    let input = document.querySelector(".edit-username-holder > input");
+    debugger;
+    if (this.state.open === false) {
+      editOption.style.visibility = "visible";
+      this.setState({ username: "" });
+      this.setState({ open: true });
+    } else if (this.state.open === true) {
+      editOption.style.visibility = "hidden";
+      this.setState({ open: false });
+      this.setState({ username: "" });
+      debugger;
+    }
   }
 
   componentDidMount() {
@@ -17,7 +36,6 @@ class User extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    debugger;
     if (prevState.moreusers.length === 0) {
       this.props.fetchUsers().then(this.randomThree());
       this.props.receiveArtistSongs(this.props.match.params.userId);
@@ -26,6 +44,26 @@ class User extends React.Component {
       this.props.receiveArtistSongs(this.props.match.params.userId);
       this.props.fetchUsers().then(this.randomThree());
     }
+  }
+
+  editUsername() {
+    const formData = new FormData();
+    formData.append("user[username]", this.state.username);
+
+    // if (this.state.imageFile) {
+    //   formData.append("user[photo]", this.state.imageFile);
+    // }
+    this.props
+      .updateUser(formData, this.props.user.id)
+      .then(this.setState({ open: true }));
+    this.openEdit();
+  }
+
+  update(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
   }
 
   randomThree() {
@@ -49,6 +87,7 @@ class User extends React.Component {
   }
 
   render() {
+    debugger;
     if (!this.props.user) {
       return null;
     }
@@ -138,6 +177,15 @@ class User extends React.Component {
         <NavBar />
         <div className="userProfileMain">
           <div className="profile-header">
+            <div className="edit-username-holder">
+              <h2>Display Name: </h2>
+              <input
+                onChange={this.update("username")}
+                value={this.state.username}
+                maxLength="30"
+              />
+              <button onClick={() => this.editUsername()}>Enter</button>
+            </div>
             <img src={user.backPhotoUrl} alt="" />
             <div className="profile-header-info">
               <div className="profile-page-pic">
@@ -180,7 +228,15 @@ class User extends React.Component {
                 </svg>
                 Share
               </div>
-              <div className="user-buttons">
+              <div
+                className={
+                  this.props.currentUser.id ===
+                  Number(this.props.match.params.userId)
+                    ? "edit-profile-btn"
+                    : "edit-profile-btn-hide"
+                }
+                onClick={() => this.openEdit()}
+              >
                 <svg
                   aria-hidden="true"
                   focusable="false"

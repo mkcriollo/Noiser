@@ -24,3 +24,11 @@ export const fetchUsers = () => (dispatch) => {
 export const fetchUser = (userId) => (dispatch) => {
   return UserUtil.fetchUser(userId).then((user) => dispatch(receiveUser(user)));
 };
+
+export const updateUser = (user, userId) => (dispatch) => {
+  return (
+    UserUtil.updateUser(user, userId)
+      // .then(user => dispatch(receiveUser(user)))
+      .then((user) => dispatch(receiveUser(user)))
+  );
+};

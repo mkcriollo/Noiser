@@ -270,6 +270,29 @@ table {
   height: 73px;
   margin-top: 160px;
   margin-left: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.delete-song-yes {
+  width: 100px;
+  height: 35px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+.delete-song-yes:hover {
+  background-color: #f50;
+  color: #fff;
+}
+
+.delete-song-no {
+  visibility: hidden;
 }
 
 /* song show body */
