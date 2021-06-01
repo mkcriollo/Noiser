@@ -9,7 +9,7 @@ class PlayButton extends React.Component {
 
   componentDidMount() {
     this.props.receiveCurrentSong(this.props.song.id);
-    this.props.receivePreviousSong(this.props.song.id);
+    // this.props.receivePreviousSong(this.props.song.id);
   }
 
   handlePlay() {

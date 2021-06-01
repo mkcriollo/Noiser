@@ -44,13 +44,14 @@ class MusicPlayer extends React.Component {
   componentDidMount() {
     let allsongs = this.props.receiveQueue(this.props.songs);
     this.setState({ songs: allsongs.songs });
-    debugger;
+    // debugger;
   }
 
   handleSetup() {
     const musicPlayer = document.getElementById("audio");
     musicPlayer.volume = 0.05;
     setTimeout(() => this.props.receiveQueue(this.props.songs), 1000);
+    this.setState({ songs: allsongs.songs });
   }
 
   handleMetadata() {
@@ -73,7 +74,13 @@ class MusicPlayer extends React.Component {
 
   handleNext() {
     this.props.receivePreviousSong(this.props.currentSong.id);
-    this.props.receiveCurrentSong(this.props.queue.pop());
+    let nextSong = this.props.queue.shift();
+    if (!nextSong) {
+      this.props.receiveQueue(this.props.songs);
+      nextSong = this.props.queue.shift();
+    }
+    this.props.receiveCurrentSong(nextSong);
+
     this.props.playSong();
     this.setState({ timeElapsed: 0 });
   }
@@ -87,7 +94,7 @@ class MusicPlayer extends React.Component {
   handleSkipBack() {
     const musicPlayer = document.getElementById("audio");
     this.props.receivePreviousSong(this.props.currentSong.id);
-    this.props.receiveCurrentSong(this.props.queue.shift());
+    // this.props.receiveCurrentSong(this.props.queue.shift());
     musicPlayer.currentTime = 0;
     this.props.playSong();
     this.setState({ timeElapsed: 0 });
@@ -160,9 +167,14 @@ class MusicPlayer extends React.Component {
     let nextSongs = [];
 
     Object.entries(this.state.songs).forEach(([key, song]) => {
-      debugger;
       nextSongs.push(
-        <div className="next-song-holder">
+        <div
+          className={
+            this.props.currentSong.id === song.id
+              ? "selected-song"
+              : "next-song-holder"
+          }
+        >
           <Link to={`/songs/${key}`}>
             <img src={song.photoUrl} alt="" />
           </Link>
@@ -274,7 +286,7 @@ class MusicPlayer extends React.Component {
           id="audio"
           controls
           controlsList="nodownload"
-          // handleSetup={this.handleSetup}
+          handleSetup={this.handleSetup}
           onLoadedMetadata={this.handleMetadata}
           onPlaying={this.handleTimeElapsed}
           onEnded={this.handleNext}
