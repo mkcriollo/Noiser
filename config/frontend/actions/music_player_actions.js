@@ -34,7 +34,6 @@ export const pauseSong = () => {
   };
 };
 export const receiveQueue = (songs) => {
-  debugger;
   return {
     type: RECEIVE_QUEUE,
     songs,

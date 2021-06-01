@@ -44,12 +44,9 @@ const musicPlayerReducer = (state = defaultStatus, action) => {
       //     let randomNum = Math.floor(Math.random() * (i + 1));
       //     [allSongs[i], allSongs[randomNum]] = [allSongs[randomNum], allSongs[i]]
       // }
-      debugger;
-
       allSongs.forEach((song) => {
         newState.queue.push(song.id);
       });
-      debugger;
       return newState;
     default:
       return state;

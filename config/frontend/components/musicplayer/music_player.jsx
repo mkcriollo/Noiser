@@ -44,7 +44,7 @@ class MusicPlayer extends React.Component {
   componentDidMount() {
     let allsongs = this.props.receiveQueue(this.props.songs);
     this.setState({ songs: allsongs.songs });
-    // debugger;
+    // ;
   }
 
   handleSetup() {
@@ -73,6 +73,8 @@ class MusicPlayer extends React.Component {
   }
 
   handleNext() {
+    const musicPlayer = document.getElementById("audio");
+
     this.props.receivePreviousSong(this.props.currentSong.id);
     let nextSong = this.props.queue.shift();
     if (!nextSong) {
@@ -80,8 +82,13 @@ class MusicPlayer extends React.Component {
       nextSong = this.props.queue.shift();
     }
     this.props.receiveCurrentSong(nextSong);
-
+    if (this.props.playing) {
+      this.props.pauseSong();
+      musicPlayer.pause();
+    }
     this.props.playSong();
+    musicPlayer.play();
+
     this.setState({ timeElapsed: 0 });
   }
 
@@ -187,7 +194,6 @@ class MusicPlayer extends React.Component {
         </div>
       );
     });
-    debugger;
 
     // let nextSongs = this.state.songs.map((song, i) => {
     //   return (

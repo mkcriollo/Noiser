@@ -282,7 +282,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(197 188 188 / 27%);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .selected-song img {
