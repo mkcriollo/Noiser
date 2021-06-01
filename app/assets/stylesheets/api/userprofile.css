@@ -580,3 +580,72 @@
   margin-right: 5px;
   font-size: 11px;
 }
+
+/* edit image */
+.edit-user-profile-img-holder {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0%;
+  width: 200px;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  height: fit-content;
+  align-items: center;
+}
+
+.edit-user-profile-img-holder > i {
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+  padding-top: 15px;
+}
+
+.edit-user-back-img-holder {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0%;
+  width: 200px;
+  top: 50px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  height: fit-content;
+  align-items: center;
+}
+
+.edit-user-back-img-holder > i {
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+  padding-top: 15px;
+}
+
+.btn-change-background {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+}
+
+.btn-change-profile {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+}
+
+.profile-header:hover .edit-user-profile-img-holder {
+  visibility: visible;
+}
+
+.profile-header:hover .edit-user-back-img-holder {
+  visibility: visible;
+}

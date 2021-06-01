@@ -9,7 +9,45 @@ class User extends React.Component {
       moreusers: [],
       username: "",
       open: false,
+      imageUrl: this.props.currentUser.photoUrl || null,
+      imageFile: null,
+      backUrl: this.props.currentUser.backPhotoUrl || null,
+      backImageFile: null,
     };
+    debugger;
+    this.editProfilePic = this.editProfilePic.bind(this);
+    this.previewFile = this.previewFile.bind(this);
+    this.previewBackground = this.previewBackground.bind(this);
+    this.editBackground = this.editBackground.bind(this);
+  }
+
+  previewFile(e) {
+    let btn = document.querySelector(".btn-change-profile");
+    debugger;
+    const file = e.target.files[0];
+    debugger;
+    if (file) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onloadend = () => {
+        this.setState({ imageFile: file, imageUrl: fileReader.result });
+      };
+      btn.style.backgroundColor = "green";
+    }
+  }
+
+  previewBackground(e) {
+    let btn = document.querySelector(".btn-change-background");
+    const file = e.target.files[0];
+    debugger;
+    if (file) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onloadend = () => {
+        this.setState({ backImageFile: file, backUrl: fileReader.result });
+      };
+      btn.style.backgroundColor = "green";
+    }
   }
 
   openEdit() {
@@ -42,6 +80,26 @@ class User extends React.Component {
       this.props.receiveArtistSongs(this.props.match.params.userId);
       this.props.fetchUsers().then(this.randomThree());
     }
+  }
+
+  editProfilePic() {
+    let btn = document.querySelector(".btn-change-profile");
+    const formData = new FormData();
+    if (this.state.imageFile) {
+      formData.append("user[photo]", this.state.imageFile);
+    }
+    this.props.updateUser(formData, this.props.user.id);
+    btn.style.backgroundColor = "white";
+  }
+
+  editBackground() {
+    let btn = document.querySelector(".btn-change-background");
+    const formData = new FormData();
+    if (this.state.backUrl) {
+      formData.append("user[backphoto]", this.state.backImageFile);
+    }
+    this.props.updateUser(formData, this.props.user.id);
+    btn.style.backgroundColor = "white";
   }
 
   editUsername() {
@@ -182,6 +240,34 @@ class User extends React.Component {
                 maxLength="30"
               />
               <button onClick={() => this.editUsername()}>Enter</button>
+            </div>
+            <div className="edit-user-profile-img-holder">
+              <i class="fas fa-camera-retro"></i>
+              <input
+                // className="replace-img"
+                type="file"
+                onChange={this.previewFile}
+              />
+              <button
+                onClick={() => this.editProfilePic()}
+                className="btn-change-profile"
+              >
+                Enter
+              </button>
+            </div>
+            <div className="edit-user-back-img-holder">
+              <i class="fas fa-image"></i>
+              <input
+                // className="replace-img"
+                type="file"
+                onChange={this.previewBackground}
+              />
+              <button
+                onClick={() => this.editBackground()}
+                className="btn-change-background"
+              >
+                Enter
+              </button>
             </div>
             <img src={user.backPhotoUrl} alt="" />
             <div className="profile-header-info">
