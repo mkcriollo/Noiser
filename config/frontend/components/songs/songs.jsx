@@ -84,7 +84,6 @@ class Songs extends React.Component {
   }
 
   render() {
-    debugger;
     if (!this.props.song) {
       return null;
     }

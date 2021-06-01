@@ -16,7 +16,6 @@ class User extends React.Component {
     let editBtn = document.querySelector(".edit-profile-btn");
     let editOption = document.querySelector(".edit-username-holder");
     let input = document.querySelector(".edit-username-holder > input");
-    debugger;
     if (this.state.open === false) {
       editOption.style.visibility = "visible";
       this.setState({ username: "" });
@@ -25,7 +24,6 @@ class User extends React.Component {
       editOption.style.visibility = "hidden";
       this.setState({ open: false });
       this.setState({ username: "" });
-      debugger;
     }
   }
 
@@ -87,7 +85,6 @@ class User extends React.Component {
   }
 
   render() {
-    debugger;
     if (!this.props.user) {
       return null;
     }

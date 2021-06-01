@@ -1,5 +1,6 @@
 import React from "react";
 import { formatTime } from "../../util/music_player";
+import { Link } from "react-router-dom";
 
 class MusicPlayer extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class MusicPlayer extends React.Component {
       volume: 0.05,
       mutedVolume: 0.0,
       volumeHover: false,
+      songs: [],
+      openQueue: false,
     };
 
     this.handlePlayAgain = this.handlePlayAgain.bind(this);
@@ -25,8 +28,23 @@ class MusicPlayer extends React.Component {
     this.handleSetup = this.handleSetup.bind(this);
   }
 
+  openQueueWindow() {
+    let queueBtn = document.querySelector(".queue-btn");
+    let queueWindow = document.querySelector(".queue-window");
+
+    if (this.state.openQueue) {
+      queueWindow.style.visibility = "hidden";
+      this.setState({ openQueue: false });
+    } else {
+      queueWindow.style.visibility = "visible";
+      this.setState({ openQueue: true });
+    }
+  }
+
   componentDidMount() {
-    this.props.receiveQueue(this.props.songs);
+    let allsongs = this.props.receiveQueue(this.props.songs);
+    this.setState({ songs: allsongs.songs });
+    debugger;
   }
 
   handleSetup() {
@@ -55,7 +73,7 @@ class MusicPlayer extends React.Component {
 
   handleNext() {
     this.props.receivePreviousSong(this.props.currentSong.id);
-    this.props.receiveCurrentSong(this.props.queue.shift());
+    this.props.receiveCurrentSong(this.props.queue.pop());
     this.props.playSong();
     this.setState({ timeElapsed: 0 });
   }
@@ -135,6 +153,48 @@ class MusicPlayer extends React.Component {
       return null;
     }
 
+    if (!this.state.songs) {
+      return null;
+    }
+
+    let nextSongs = [];
+
+    Object.entries(this.state.songs).forEach(([key, song]) => {
+      debugger;
+      nextSongs.push(
+        <div className="next-song-holder">
+          <Link to={`/songs/${key}`}>
+            <img src={song.photoUrl} alt="" />
+          </Link>
+          <div className="queue-song-info-holder">
+            <h3>{song.description}</h3>
+            <Link to={`/songs/${key}`}>
+              <h3>{song.title}</h3>
+            </Link>
+          </div>
+        </div>
+      );
+    });
+    debugger;
+
+    // let nextSongs = this.state.songs.map((song, i) => {
+    //   return (
+    //     <div>
+    //       <div className="next-song-holder">
+    //         <Link to={`/songs/${i}`}>
+    //           <img src={song.photoUrl} alt="" />
+    //         </Link>
+    //         <div className="queue-song-info-holder">
+    //           <h3>{song.description}</h3>
+    //           <Link to={`/songs/${i}`}>
+    //             <h3>{song.title}</h3>
+    //           </Link>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   );
+    // });
+
     const { currentSong, artist, playing } = this.props;
 
     const musicPlayerOn = currentSong ? (
@@ -168,7 +228,15 @@ class MusicPlayer extends React.Component {
           </div>
 
           <div className="volume">
-            <button></button>
+            {/* <input
+              className="scrollbar"
+              id="scrollbar"
+              type="range"
+              min="0"
+              max={this.state.duration}
+              defaultValue="0"
+              onInput={this.handleSkip}
+            ></input> */}
           </div>
 
           <div className="mp-song-info-holder">
@@ -182,6 +250,19 @@ class MusicPlayer extends React.Component {
               </a>
             </div>
           </div>
+          <div className="queue-btn" onClick={() => this.openQueueWindow()}>
+            <i class="fas fa-stream"></i>
+          </div>
+          <div className="queue-window">
+            <div className="queue-headliner">
+              <h2>Up Next</h2>
+              <i
+                class="fas fa-times"
+                onClick={() => this.openQueueWindow()}
+              ></i>
+            </div>
+            {nextSongs}
+          </div>
         </div>
       </div>
     ) : null;
@@ -193,7 +274,7 @@ class MusicPlayer extends React.Component {
           id="audio"
           controls
           controlsList="nodownload"
-          handleSetup={this.handleSetup}
+          // handleSetup={this.handleSetup}
           onLoadedMetadata={this.handleMetadata}
           onPlaying={this.handleTimeElapsed}
           onEnded={this.handleNext}
