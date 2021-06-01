@@ -19,6 +19,7 @@ class User extends React.Component {
     this.previewFile = this.previewFile.bind(this);
     this.previewBackground = this.previewBackground.bind(this);
     this.editBackground = this.editBackground.bind(this);
+    debugger;
   }
 
   previewFile(e) {
@@ -146,7 +147,7 @@ class User extends React.Component {
     if (!this.props.user) {
       return null;
     }
-
+    debugger;
     let { userSongs, user } = this.props;
 
     const allUsers = this.state.moreusers.map((user, i) => {
@@ -241,7 +242,13 @@ class User extends React.Component {
               />
               <button onClick={() => this.editUsername()}>Enter</button>
             </div>
-            <div className="edit-user-profile-img-holder">
+            <div
+              className={
+                this.props.currentUser.id === this.props.user.id
+                  ? "edit-user-profile-img-holder"
+                  : "show-nothing"
+              }
+            >
               <i class="fas fa-camera-retro"></i>
               <input
                 // className="replace-img"
@@ -255,7 +262,13 @@ class User extends React.Component {
                 Enter
               </button>
             </div>
-            <div className="edit-user-back-img-holder">
+            <div
+              className={
+                this.props.currentUser.id === this.props.user.id
+                  ? "edit-user-back-img-holder"
+                  : "show-nothing"
+              }
+            >
               <i class="fas fa-image"></i>
               <input
                 // className="replace-img"
