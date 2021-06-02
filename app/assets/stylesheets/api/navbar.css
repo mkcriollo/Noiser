@@ -544,3 +544,8 @@ table {
   color: #111;
   cursor: pointer;
 }
+
+.logout-drop a {
+  text-decoration: none;
+  color: #333;
+}

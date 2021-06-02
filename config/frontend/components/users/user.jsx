@@ -266,7 +266,7 @@ class User extends React.Component {
               className={
                 this.props.currentUser.id === this.props.user.id
                   ? "edit-user-back-img-holder"
-                  : "show-nothing"
+                  : "show-nothing1"
               }
             >
               <i class="fas fa-image"></i>

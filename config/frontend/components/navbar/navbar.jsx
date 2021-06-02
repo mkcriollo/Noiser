@@ -80,6 +80,17 @@ class NavBar extends React.Component {
                 >
                   Sign out
                 </button>
+                <button>
+                  <a href="https://www.linkedin.com/in/mike-criollo-b38377206/">
+                    LinkedIn
+                  </a>
+                </button>
+                <button>
+                  <a href="https://github.com/mkcriollo">Github</a>
+                </button>
+                <button>
+                  <a href="https://angel.co/u/mike-criollo">AngelList</a>
+                </button>
               </div>
             </div>
           </div>
